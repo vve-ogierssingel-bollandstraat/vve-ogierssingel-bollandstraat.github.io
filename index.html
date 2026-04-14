@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Building Rules - Gebouwregels</title>
+<title>Gebouwregels - Building Rules</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111;line-height:1.5;padding:16px}
@@ -23,10 +23,12 @@ body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111;line-h
 .lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
 .lang-nav button{border:1px solid #ccc;background:#fff;border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer}
 .lang-nav button.active{background:#111;color:#fff;border-color:#111}
-.section{display:none}
-.section.active{display:block}
+.section,.hr-section{display:none}
+.section.active,.hr-section.active{display:block}
 .highlight{border-left:4px solid #1a73e8}
 .highlight h2{color:#1a73e8;border-bottom-color:#1a73e8}
+.hl{padding:4px 0 4px 28px;position:relative}
+.hl span{position:absolute;left:0}
 .docs{text-align:center;padding:16px}
 .docs a{color:#1a73e8;text-decoration:none;font-weight:bold}
 footer{text-align:center;font-size:.75em;color:#999;padding:16px 0}
@@ -40,8 +42,37 @@ footer{text-align:center;font-size:.75em;color:#999;padding:16px 0}
 <div class="lang-nav" id="langNav"></div>
 </div>
 
+<!-- NEDERLANDS -->
+<div class="section" data-lang="nl">
+<div class="card mirror">
+<div class="q">Waarom doe je dit buiten en niet binnen?</div>
+Omdat rook, stank, lawaai en overlast ook in jouw kamer niet prettig zijn.<br>
+Je buren willen het ook niet.
+</div>
+<div class="card rules">
+<h2>Verboden in gemeenschappelijke ruimtes</h2>
+<ul>
+<li>Roken</li>
+<li>Drugsgebruik</li>
+<li>Alcohol drinken</li>
+<li>Luid bellen</li>
+<li>Hard praten of muziek</li>
+</ul>
+<h2>Stille uren: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Extra stilte in gangen, trappenhuizen en galerijen</li>
+</ul>
+<h2>Gemeenschappelijke ruimtes</h2>
+<ul class="areas">
+<li>Balkons, galerijen, trappenhuizen</li>
+<li>Entrees, gangen, bergingsgangen</li>
+</ul>
+<div class="warn">Herhaalde overlast wordt gemeld bij het bestuur.</div>
+</div>
+</div>
+
 <!-- ENGLISH -->
-<div class="section active" data-lang="en">
+<div class="section" data-lang="en">
 <div class="card mirror">
 <div class="q">Why do you do this outside and not inside?</div>
 Because smoke, smell, noise and nuisance are not pleasant in your room.<br>
@@ -362,72 +393,594 @@ Vaši komšije to takođe ne žele.
 </div>
 </div>
 
-<div class="card highlight" id="huisregels">
-<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Huisregels voor bewoners</h2>
-<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">
-Samenvatting huishoudelijk reglement &amp; splitsingsreglement<br>
-— in normaal Nederlands.
-</p>
+<!-- =============== HUISREGELS PER TAAL =============== -->
 
+<!-- HR: NEDERLANDS -->
+<div class="card highlight hr-section" data-lang="nl">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Huisregels voor bewoners</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Samenvatting huishoudelijk reglement &amp; splitsingsreglement — in normaal Nederlands.</p>
 <div class="rules">
 <h2>🔑 Jouw woning</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Wil je verbouwen? Mag, maar volg de bouwregels (bouwbesluit, NEN-1010). Aan dragende muren komen = toestemming VvE nodig.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Harde vloer leggen (laminaat, hout)? Alleen met geluidsisolatie (10 dB demping, zwevende constructie). Keuken/badkamer/toilet uitgezonderd.</li>
-</ul>
-
+<ul><li class="hl"><span>•</span>Wil je verbouwen? Mag, maar volg de bouwregels (bouwbesluit, NEN-1010). Aan dragende muren komen = toestemming VvE nodig.</li>
+<li class="hl"><span>•</span>Harde vloer leggen (laminaat, hout)? Alleen met geluidsisolatie (10 dB demping, zwevende constructie). Keuken/badkamer/toilet uitgezonderd.</li></ul>
 <h2>🚪 Gemeenschappelijke ruimtes</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Galerijen, trappenhuizen, gangen, bergingen — van iedereen, dus schoon en vrij houden.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Minimaal 90 cm doorgang vrij houden op de galerij. Altijd.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Geen fietsen, kinderwagens of rommel in de gang. Fietsen horen in je berging of bij de fietsenrekken buiten.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Niets ophangen of neerzetten in het trappenhuis. Geen planten, schilderijen, decoratie.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Kinderen mogen niet spelen in de gangen, trappenhuizen of bergingen.</li>
-</ul>
-
+<ul><li class="hl"><span>•</span>Galerijen, trappenhuizen, gangen, bergingen — van iedereen, dus schoon en vrij houden.</li>
+<li class="hl"><span>•</span>Minimaal 90 cm doorgang vrij houden op de galerij. Altijd.</li>
+<li class="hl"><span>•</span>Geen fietsen, kinderwagens of rommel in de gang. Fietsen horen in je berging of bij de fietsenrekken buiten.</li>
+<li class="hl"><span>•</span>Niets ophangen of neerzetten in het trappenhuis. Geen planten, schilderijen, decoratie.</li>
+<li class="hl"><span>•</span>Kinderen mogen niet spelen in de gangen, trappenhuizen of bergingen.</li></ul>
 <h2>🔇 Geluid &amp; overlast</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span><strong>Stilte tussen 22:00 en 07:00</strong> — geen muziek, geen instrumenten, geen harde geluiden.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Apparaten die radio/tv-ontvangst van anderen storen zijn niet toegestaan.</li>
-</ul>
-
+<ul><li class="hl"><span>•</span><strong>Stilte tussen 22:00 en 07:00</strong> — geen muziek, geen instrumenten, geen harde geluiden.</li>
+<li class="hl"><span>•</span>Apparaten die radio/tv-ontvangst van anderen storen zijn niet toegestaan.</li></ul>
 <h2>🐕 Huisdieren</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Huisdieren mogen, zolang ze geen overlast geven.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>In gemeenschappelijke ruimtes: altijd aangelijnd of dragen.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Poep? Direct opruimen. Geen discussie.</li>
-</ul>
-
+<ul><li class="hl"><span>•</span>Huisdieren mogen, zolang ze geen overlast geven.</li>
+<li class="hl"><span>•</span>In gemeenschappelijke ruimtes: altijd aangelijnd of dragen.</li>
+<li class="hl"><span>•</span>Poep? Direct opruimen. Geen discussie.</li></ul>
 <h2>🚫 Dit mag echt niet</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Roken, drinken of drugs gebruiken in gemeenschappelijke ruimtes</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Afval van je balkon gooien of in de tuin dumpen</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Barbecueën op het balkon (stank voor de buren)</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Vuurwerk afsteken vanaf balkon, terras of tuin</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Vogels voeren (duiven veroorzaken enorme schade)</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Het dak betreden (tenzij toestemming van bestuur)</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Brandgevaarlijke spullen opslaan in je berging (benzine, petroleum, etc.)</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">❌</span>Onbekenden binnenlaten — gebruik de videofoon, check wie er voor de deur staat</li>
-</ul>
-
+<ul><li class="hl"><span>❌</span>Roken, drinken of drugs gebruiken in gemeenschappelijke ruimtes</li>
+<li class="hl"><span>❌</span>Afval van je balkon gooien of in de tuin dumpen</li>
+<li class="hl"><span>❌</span>Barbecueën op het balkon (stank voor de buren)</li>
+<li class="hl"><span>❌</span>Vuurwerk afsteken vanaf balkon, terras of tuin</li>
+<li class="hl"><span>❌</span>Vogels voeren (duiven veroorzaken enorme schade)</li>
+<li class="hl"><span>❌</span>Het dak betreden (tenzij toestemming van bestuur)</li>
+<li class="hl"><span>❌</span>Brandgevaarlijke spullen opslaan in je berging (benzine, petroleum, etc.)</li>
+<li class="hl"><span>❌</span>Onbekenden binnenlaten — gebruik de videofoon, check wie er voor de deur staat</li></ul>
 <h2>🔐 Veiligheid</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Laat de voordeur nooit openstaan. Nooit.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Druk niet zomaar op de deuropener — check via de videofoon of het je eigen bezoek is.</li>
-</ul>
-
+<ul><li class="hl"><span>•</span>Laat de voordeur nooit openstaan. Nooit.</li>
+<li class="hl"><span>•</span>Druk niet zomaar op de deuropener — check via de videofoon of het je eigen bezoek is.</li></ul>
 <h2>⚠️ Overtredingen</h2>
-<ul style="list-style:none;padding:0">
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Eerste keer: schriftelijke waarschuwing.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Tweede keer: aangetekende brief.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Daarna: boete tot <strong>€500 per overtreding</strong> + eventuele schadevergoeding.</li>
-<li style="padding:4px 0 4px 28px;position:relative"><span style="position:absolute;left:0">•</span>Bij herhaaldelijke ernstige overlast kan je het gebruiksrecht van je woning kwijtraken.</li>
-</ul>
+<ul><li class="hl"><span>•</span>Eerste keer: schriftelijke waarschuwing.</li>
+<li class="hl"><span>•</span>Tweede keer: aangetekende brief.</li>
+<li class="hl"><span>•</span>Daarna: boete tot <strong>€500 per overtreding</strong> + eventuele schadevergoeding.</li>
+<li class="hl"><span>•</span>Bij herhaaldelijke ernstige overlast kan je het gebruiksrecht van je woning kwijtraken.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Dit is een vereenvoudigde samenvatting. De volledige documenten (huishoudelijk reglement 2017 &amp; splitsingsreglement 1973) zijn leidend.</p>
 </div>
 
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">
-Dit is een vereenvoudigde samenvatting. De volledige documenten (huishoudelijk reglement 2017 &amp; splitsingsreglement 1973) zijn leidend.
-</p>
+<!-- HR: ENGLISH -->
+<div class="card highlight hr-section" data-lang="en">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 House rules for residents</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Summary of the house rules &amp; split deed — in plain language.</p>
+<div class="rules">
+<h2>🔑 Your apartment</h2>
+<ul><li class="hl"><span>•</span>Want to renovate? You can, but follow building codes (NEN-1010). Touching load-bearing walls = VvE permission required.</li>
+<li class="hl"><span>•</span>Hard flooring (laminate, wood)? Only with sound insulation (10 dB reduction, floating construction). Kitchen/bathroom/toilet excluded.</li></ul>
+<h2>🚪 Shared spaces</h2>
+<ul><li class="hl"><span>•</span>Galleries, stairwells, hallways, storage areas — shared by all, keep them clean and clear.</li>
+<li class="hl"><span>•</span>Keep at least 90 cm passage free on the gallery. Always.</li>
+<li class="hl"><span>•</span>No bikes, strollers or junk in the hallway. Bikes go in your storage unit or the bike racks outside.</li>
+<li class="hl"><span>•</span>Don't hang or place anything in the stairwell. No plants, paintings, decorations.</li>
+<li class="hl"><span>•</span>Children may not play in hallways, stairwells or storage areas.</li></ul>
+<h2>🔇 Noise &amp; nuisance</h2>
+<ul><li class="hl"><span>•</span><strong>Quiet between 22:00 and 07:00</strong> — no music, no instruments, no loud sounds.</li>
+<li class="hl"><span>•</span>Devices that interfere with others' radio/TV reception are not allowed.</li></ul>
+<h2>🐕 Pets</h2>
+<ul><li class="hl"><span>•</span>Pets are allowed, as long as they don't cause nuisance.</li>
+<li class="hl"><span>•</span>In shared spaces: always on a leash or carried.</li>
+<li class="hl"><span>•</span>Droppings? Clean up immediately. No exceptions.</li></ul>
+<h2>🚫 Strictly forbidden</h2>
+<ul><li class="hl"><span>❌</span>Smoking, drinking or drug use in shared spaces</li>
+<li class="hl"><span>❌</span>Throwing waste from your balcony or dumping it in the garden</li>
+<li class="hl"><span>❌</span>Barbecuing on the balcony (smell nuisance for neighbors)</li>
+<li class="hl"><span>❌</span>Setting off fireworks from balcony, terrace or garden</li>
+<li class="hl"><span>❌</span>Feeding birds (pigeons cause enormous damage)</li>
+<li class="hl"><span>❌</span>Accessing the roof (unless authorized by the board)</li>
+<li class="hl"><span>❌</span>Storing flammable materials in your storage unit (petrol, petroleum, etc.)</li>
+<li class="hl"><span>❌</span>Letting strangers in — use the video intercom, check who is at the door</li></ul>
+<h2>🔐 Safety</h2>
+<ul><li class="hl"><span>•</span>Never leave the front door open. Ever.</li>
+<li class="hl"><span>•</span>Don't just buzz people in — check via the video intercom that it's your own visitor.</li></ul>
+<h2>⚠️ Violations</h2>
+<ul><li class="hl"><span>•</span>First time: written warning.</li>
+<li class="hl"><span>•</span>Second time: registered letter.</li>
+<li class="hl"><span>•</span>After that: fine up to <strong>€500 per violation</strong> + possible damages.</li>
+<li class="hl"><span>•</span>Repeated serious nuisance can result in losing the right to use your apartment.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">This is a simplified summary. The full documents (house rules 2017 &amp; split deed 1973) are authoritative.</p>
+</div>
+
+<!-- HR: GERMAN -->
+<div class="card highlight hr-section" data-lang="de">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Hausregeln für Bewohner</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Zusammenfassung der Hausordnung &amp; Teilungsverordnung — in einfacher Sprache.</p>
+<div class="rules">
+<h2>🔑 Ihre Wohnung</h2>
+<ul><li class="hl"><span>•</span>Renovieren? Erlaubt, aber nach Bauvorschriften (NEN-1010). Tragende Wände = Genehmigung der VvE erforderlich.</li>
+<li class="hl"><span>•</span>Harter Bodenbelag (Laminat, Holz)? Nur mit Schalldämmung (10 dB, schwimmender Aufbau). Küche/Bad/WC ausgenommen.</li></ul>
+<h2>🚪 Gemeinschaftsbereiche</h2>
+<ul><li class="hl"><span>•</span>Galerien, Treppenhäuser, Flure, Abstellräume — gehören allen, sauber und frei halten.</li>
+<li class="hl"><span>•</span>Mindestens 90 cm Durchgang auf der Galerie freihalten. Immer.</li>
+<li class="hl"><span>•</span>Keine Fahrräder, Kinderwagen oder Gerümpel im Flur. Fahrräder gehören in den Abstellraum oder die Fahrradständer draußen.</li>
+<li class="hl"><span>•</span>Nichts im Treppenhaus aufhängen oder abstellen. Keine Pflanzen, Bilder, Dekoration.</li>
+<li class="hl"><span>•</span>Kinder dürfen nicht in den Fluren, Treppenhäusern oder Abstellräumen spielen.</li></ul>
+<h2>🔇 Lärm &amp; Belästigung</h2>
+<ul><li class="hl"><span>•</span><strong>Ruhe zwischen 22:00 und 07:00</strong> — keine Musik, keine Instrumente, keine lauten Geräusche.</li>
+<li class="hl"><span>•</span>Geräte, die den Radio-/TV-Empfang anderer stören, sind nicht erlaubt.</li></ul>
+<h2>🐕 Haustiere</h2>
+<ul><li class="hl"><span>•</span>Haustiere sind erlaubt, solange sie keine Belästigung verursachen.</li>
+<li class="hl"><span>•</span>In Gemeinschaftsbereichen: immer an der Leine oder getragen.</li>
+<li class="hl"><span>•</span>Hinterlassenschaften? Sofort aufräumen. Keine Ausnahmen.</li></ul>
+<h2>🚫 Streng verboten</h2>
+<ul><li class="hl"><span>❌</span>Rauchen, Trinken oder Drogenkonsum in Gemeinschaftsbereichen</li>
+<li class="hl"><span>❌</span>Abfall vom Balkon werfen oder im Garten entsorgen</li>
+<li class="hl"><span>❌</span>Grillen auf dem Balkon (Geruchsbelästigung für Nachbarn)</li>
+<li class="hl"><span>❌</span>Feuerwerk vom Balkon, Terrasse oder Garten abfeuern</li>
+<li class="hl"><span>❌</span>Vögel füttern (Tauben verursachen enorme Schäden)</li>
+<li class="hl"><span>❌</span>Dach betreten (ohne Genehmigung der Verwaltung)</li>
+<li class="hl"><span>❌</span>Brennbare Materialien im Abstellraum lagern (Benzin, Petroleum usw.)</li>
+<li class="hl"><span>❌</span>Fremde einlassen — Videogegensprechanlage nutzen, prüfen wer vor der Tür steht</li></ul>
+<h2>🔐 Sicherheit</h2>
+<ul><li class="hl"><span>•</span>Lassen Sie die Haustür niemals offen stehen. Niemals.</li>
+<li class="hl"><span>•</span>Nicht einfach den Türöffner drücken — prüfen Sie über die Videogegensprechanlage, ob es Ihr eigener Besuch ist.</li></ul>
+<h2>⚠️ Verstöße</h2>
+<ul><li class="hl"><span>•</span>Erstes Mal: schriftliche Verwarnung.</li>
+<li class="hl"><span>•</span>Zweites Mal: Einschreiben.</li>
+<li class="hl"><span>•</span>Danach: Geldbuße bis <strong>€500 pro Verstoß</strong> + möglicher Schadensersatz.</li>
+<li class="hl"><span>•</span>Bei wiederholter schwerer Belästigung kann das Nutzungsrecht entzogen werden.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Dies ist eine vereinfachte Zusammenfassung. Die vollständigen Dokumente (Hausordnung 2017 &amp; Teilungsverordnung 1973) sind maßgeblich.</p>
+</div>
+
+<!-- HR: POLISH -->
+<div class="card highlight hr-section" data-lang="pl">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Regulamin dla mieszkańców</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Skrót regulaminu domowego i aktu podziału — prostym językiem.</p>
+<div class="rules">
+<h2>🔑 Twoje mieszkanie</h2>
+<ul><li class="hl"><span>•</span>Chcesz remontować? Możesz, ale zgodnie z przepisami budowlanymi (NEN-1010). Ściany nośne = zgoda VvE wymagana.</li>
+<li class="hl"><span>•</span>Twarda podłoga (laminat, drewno)? Tylko z izolacją akustyczną (10 dB tłumienia, konstrukcja pływająca). Kuchnia/łazienka/toaleta wykluczone.</li></ul>
+<h2>🚪 Części wspólne</h2>
+<ul><li class="hl"><span>•</span>Galerie, klatki schodowe, korytarze, komórki — wspólne dla wszystkich, utrzymuj je w czystości.</li>
+<li class="hl"><span>•</span>Zawsze zostawiaj co najmniej 90 cm przejścia na galerii.</li>
+<li class="hl"><span>•</span>Żadnych rowerów, wózków ani gratów na korytarzu. Rowery do komórki lub na stojaki na zewnątrz.</li>
+<li class="hl"><span>•</span>Nic nie wieszaj ani nie stawiaj na klatce schodowej. Żadnych roślin, obrazów, dekoracji.</li>
+<li class="hl"><span>•</span>Dzieci nie mogą bawić się na korytarzach, klatkach schodowych ani w komórkach.</li></ul>
+<h2>🔇 Hałas i uciążliwości</h2>
+<ul><li class="hl"><span>•</span><strong>Cisza między 22:00 a 07:00</strong> — bez muzyki, instrumentów, głośnych dźwięków.</li>
+<li class="hl"><span>•</span>Urządzenia zakłócające odbiór radiowy/telewizyjny innych nie są dozwolone.</li></ul>
+<h2>🐕 Zwierzęta</h2>
+<ul><li class="hl"><span>•</span>Zwierzęta domowe dozwolone, o ile nie powodują uciążliwości.</li>
+<li class="hl"><span>•</span>W częściach wspólnych: zawsze na smyczy lub noszone.</li>
+<li class="hl"><span>•</span>Odchody? Natychmiast posprzątaj. Bez dyskusji.</li></ul>
+<h2>🚫 Surowo zabronione</h2>
+<ul><li class="hl"><span>❌</span>Palenie, picie alkoholu lub zażywanie narkotyków w częściach wspólnych</li>
+<li class="hl"><span>❌</span>Wyrzucanie odpadów z balkonu lub porzucanie w ogrodzie</li>
+<li class="hl"><span>❌</span>Grillowanie na balkonie (zapach przeszkadza sąsiadom)</li>
+<li class="hl"><span>❌</span>Odpalanie fajerwerków z balkonu, tarasu lub ogrodu</li>
+<li class="hl"><span>❌</span>Karmienie ptaków (gołębie powodują ogromne szkody)</li>
+<li class="hl"><span>❌</span>Wchodzenie na dach (bez zgody zarządu)</li>
+<li class="hl"><span>❌</span>Przechowywanie materiałów łatwopalnych w komórce (benzyna, nafta itp.)</li>
+<li class="hl"><span>❌</span>Wpuszczanie nieznajomych — użyj wideofonu, sprawdź kto stoi przed drzwiami</li></ul>
+<h2>🔐 Bezpieczeństwo</h2>
+<ul><li class="hl"><span>•</span>Nigdy nie zostawiaj drzwi wejściowych otwartych. Nigdy.</li>
+<li class="hl"><span>•</span>Nie otwieraj drzwi na ślepo — sprawdź przez wideofon, czy to twój gość.</li></ul>
+<h2>⚠️ Naruszenia</h2>
+<ul><li class="hl"><span>•</span>Pierwszy raz: pisemne ostrzeżenie.</li>
+<li class="hl"><span>•</span>Drugi raz: list polecony.</li>
+<li class="hl"><span>•</span>Potem: kara do <strong>€500 za naruszenie</strong> + ewentualne odszkodowanie.</li>
+<li class="hl"><span>•</span>Powtarzające się poważne uciążliwości mogą skutkować utratą prawa do korzystania z mieszkania.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">To jest uproszczone podsumowanie. Pełne dokumenty (regulamin 2017 i akt podziału 1973) są wiążące.</p>
+</div>
+
+<!-- HR: ROMANIAN -->
+<div class="card highlight hr-section" data-lang="ro">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Reguli pentru locatari</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Rezumat al regulamentului intern &amp; actului de separare — pe înțelesul tuturor.</p>
+<div class="rules">
+<h2>🔑 Apartamentul tău</h2>
+<ul><li class="hl"><span>•</span>Vrei să renovezi? Poți, dar respectă normele de construcție (NEN-1010). Pereți portanți = aprobare VvE necesară.</li>
+<li class="hl"><span>•</span>Pardoseală dură (laminat, lemn)? Doar cu izolație fonică (10 dB, construcție flotantă). Bucătărie/baie/toaletă excluse.</li></ul>
+<h2>🚪 Spații comune</h2>
+<ul><li class="hl"><span>•</span>Galerii, scări, holuri, boxe — aparțin tuturor, păstrează-le curate și libere.</li>
+<li class="hl"><span>•</span>Lasă minimum 90 cm liber pe galerie. Întotdeauna.</li>
+<li class="hl"><span>•</span>Fără biciclete, cărucioare sau gunoaie pe hol. Bicicletele merg în boxă sau la rastele de afară.</li>
+<li class="hl"><span>•</span>Nu agăța sau pune nimic în casa scării. Fără plante, tablouri, decorațiuni.</li>
+<li class="hl"><span>•</span>Copiii nu au voie să se joace pe holuri, scări sau în boxe.</li></ul>
+<h2>🔇 Zgomot &amp; deranj</h2>
+<ul><li class="hl"><span>•</span><strong>Liniște între 22:00 și 07:00</strong> — fără muzică, instrumente sau zgomote puternice.</li>
+<li class="hl"><span>•</span>Aparatele care interferează cu recepția radio/TV a altora nu sunt permise.</li></ul>
+<h2>🐕 Animale de companie</h2>
+<ul><li class="hl"><span>•</span>Animalele sunt permise, atâta timp cât nu deranjează.</li>
+<li class="hl"><span>•</span>În spații comune: mereu în lesă sau purtate.</li>
+<li class="hl"><span>•</span>Excremente? Curăță imediat. Fără discuții.</li></ul>
+<h2>🚫 Strict interzis</h2>
+<ul><li class="hl"><span>❌</span>Fumat, băut alcool sau consumul de droguri în spații comune</li>
+<li class="hl"><span>❌</span>Aruncarea deșeurilor de pe balcon sau în grădină</li>
+<li class="hl"><span>❌</span>Grătar pe balcon (miros deranjant pentru vecini)</li>
+<li class="hl"><span>❌</span>Artificii de pe balcon, terasă sau grădină</li>
+<li class="hl"><span>❌</span>Hrănirea păsărilor (porumbeii cauzează daune enorme)</li>
+<li class="hl"><span>❌</span>Accesul pe acoperiș (fără autorizarea administrației)</li>
+<li class="hl"><span>❌</span>Depozitarea materialelor inflamabile în boxă (benzină, petrol etc.)</li>
+<li class="hl"><span>❌</span>Lăsarea necunoscuților să intre — folosește videofonul, verifică cine este la ușă</li></ul>
+<h2>🔐 Siguranță</h2>
+<ul><li class="hl"><span>•</span>Nu lăsa niciodată ușa de intrare deschisă. Niciodată.</li>
+<li class="hl"><span>•</span>Nu deschide ușa orbește — verifică prin videofon că este vizitatorul tău.</li></ul>
+<h2>⚠️ Încălcări</h2>
+<ul><li class="hl"><span>•</span>Prima dată: avertisment scris.</li>
+<li class="hl"><span>•</span>A doua oară: scrisoare recomandată.</li>
+<li class="hl"><span>•</span>Apoi: amendă până la <strong>€500 per încălcare</strong> + eventuale despăgubiri.</li>
+<li class="hl"><span>•</span>Deranjul grav repetat poate duce la pierderea dreptului de utilizare a apartamentului.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Acesta este un rezumat simplificat. Documentele complete (regulament 2017 &amp; act de separare 1973) sunt cele oficiale.</p>
+</div>
+
+<!-- HR: BULGARIAN -->
+<div class="card highlight hr-section" data-lang="bg">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Правила за живеещите</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Обобщение на вътрешния правилник и акта за разделяне — на прост език.</p>
+<div class="rules">
+<h2>🔑 Вашето жилище</h2>
+<ul><li class="hl"><span>•</span>Искате да ремонтирате? Може, но спазвайте строителните норми (NEN-1010). Носещи стени = разрешение от VvE.</li>
+<li class="hl"><span>•</span>Твърд под (ламинат, дърво)? Само със звукоизолация (10 dB, плаваща конструкция). Кухня/баня/тоалетна — изключение.</li></ul>
+<h2>🚪 Общи части</h2>
+<ul><li class="hl"><span>•</span>Галерии, стълбища, коридори, мазета — общи за всички, поддържайте ги чисти.</li>
+<li class="hl"><span>•</span>Минимум 90 см свободен проход на галерията. Винаги.</li>
+<li class="hl"><span>•</span>Без велосипеди, колички или боклуци в коридора. Велосипедите — в мазето или на стойките навън.</li>
+<li class="hl"><span>•</span>Нищо не закачайте и не поставяйте в стълбището. Без растения, картини, декорации.</li>
+<li class="hl"><span>•</span>Децата нямат право да играят в коридорите, стълбищата или мазетата.</li></ul>
+<h2>🔇 Шум и неудобства</h2>
+<ul><li class="hl"><span>•</span><strong>Тишина между 22:00 и 07:00</strong> — без музика, инструменти, силни звуци.</li>
+<li class="hl"><span>•</span>Уреди, които смущават радио/ТВ приемането на другите, не са разрешени.</li></ul>
+<h2>🐕 Домашни любимци</h2>
+<ul><li class="hl"><span>•</span>Домашни любимци са разрешени, стига да не причиняват неудобства.</li>
+<li class="hl"><span>•</span>В общите части: винаги на каишка или носени.</li>
+<li class="hl"><span>•</span>Изпражнения? Почистете веднага. Без дискусии.</li></ul>
+<h2>🚫 Строго забранено</h2>
+<ul><li class="hl"><span>❌</span>Пушене, пиене или употреба на наркотици в общите части</li>
+<li class="hl"><span>❌</span>Хвърляне на отпадъци от балкона или в градината</li>
+<li class="hl"><span>❌</span>Барбекю на балкона (миризма за съседите)</li>
+<li class="hl"><span>❌</span>Фойерверки от балкон, тераса или градина</li>
+<li class="hl"><span>❌</span>Хранене на птици (гълъбите причиняват огромни щети)</li>
+<li class="hl"><span>❌</span>Достъп до покрива (без разрешение на управата)</li>
+<li class="hl"><span>❌</span>Съхранение на запалими материали в мазето (бензин, нафта и др.)</li>
+<li class="hl"><span>❌</span>Пускане на непознати — използвайте видеофона, проверете кой е на вратата</li></ul>
+<h2>🔐 Безопасност</h2>
+<ul><li class="hl"><span>•</span>Никога не оставяйте входната врата отворена. Никога.</li>
+<li class="hl"><span>•</span>Не отваряйте на сляпо — проверете чрез видеофона дали е вашият гост.</li></ul>
+<h2>⚠️ Нарушения</h2>
+<ul><li class="hl"><span>•</span>Първи път: писмено предупреждение.</li>
+<li class="hl"><span>•</span>Втори път: препоръчано писмо.</li>
+<li class="hl"><span>•</span>След това: глоба до <strong>€500 на нарушение</strong> + евентуално обезщетение.</li>
+<li class="hl"><span>•</span>Повтарящи се сериозни нарушения могат да доведат до загуба на правото на ползване на жилището.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Това е опростено обобщение. Пълните документи (правилник 2017 и акт за разделяне 1973) са водещи.</p>
+</div>
+
+<!-- HR: CZECH -->
+<div class="card highlight hr-section" data-lang="cs">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Domovní řád pro obyvatele</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Shrnutí domovního řádu a smlouvy o rozdělení — srozumitelně.</p>
+<div class="rules">
+<h2>🔑 Váš byt</h2>
+<ul><li class="hl"><span>•</span>Chcete rekonstruovat? Můžete, ale dodržujte stavební předpisy (NEN-1010). Nosné stěny = souhlas VvE nutný.</li>
+<li class="hl"><span>•</span>Tvrdá podlaha (laminát, dřevo)? Pouze se zvukovou izolací (10 dB, plovoucí konstrukce). Kuchyně/koupelna/WC výjimkou.</li></ul>
+<h2>🚪 Společné prostory</h2>
+<ul><li class="hl"><span>•</span>Galerie, schodiště, chodby, sklepy — patří všem, udržujte je čisté a volné.</li>
+<li class="hl"><span>•</span>Na galerii vždy nechte volný průchod minimálně 90 cm.</li>
+<li class="hl"><span>•</span>Žádná kola, kočárky ani harampádí na chodbě. Kola patří do sklepa nebo na stojany venku.</li>
+<li class="hl"><span>•</span>Na schodišti nic nevěšejte ani nestavte. Žádné rostliny, obrazy, dekorace.</li>
+<li class="hl"><span>•</span>Děti si nesmí hrát na chodbách, schodištích ani ve sklepech.</li></ul>
+<h2>🔇 Hluk a obtěžování</h2>
+<ul><li class="hl"><span>•</span><strong>Klid mezi 22:00 a 07:00</strong> — žádná hudba, nástroje, hlasité zvuky.</li>
+<li class="hl"><span>•</span>Přístroje rušící rozhlasový/televizní příjem ostatních nejsou povoleny.</li></ul>
+<h2>🐕 Domácí zvířata</h2>
+<ul><li class="hl"><span>•</span>Domácí zvířata povolena, pokud nezpůsobují obtěžování.</li>
+<li class="hl"><span>•</span>Ve společných prostorech: vždy na vodítku nebo nesena.</li>
+<li class="hl"><span>•</span>Exkrementy? Okamžitě uklidit. Bez diskuse.</li></ul>
+<h2>🚫 Přísně zakázáno</h2>
+<ul><li class="hl"><span>❌</span>Kouření, pití alkoholu nebo užívání drog ve společných prostorech</li>
+<li class="hl"><span>❌</span>Vyhazování odpadu z balkonu nebo do zahrady</li>
+<li class="hl"><span>❌</span>Grilování na balkonu (zápach pro sousedy)</li>
+<li class="hl"><span>❌</span>Odpalování ohňostrojů z balkonu, terasy nebo zahrady</li>
+<li class="hl"><span>❌</span>Krmení ptáků (holubi způsobují obrovské škody)</li>
+<li class="hl"><span>❌</span>Vstup na střechu (bez povolení správy)</li>
+<li class="hl"><span>❌</span>Skladování hořlavých materiálů ve sklepě (benzín, petrolej atd.)</li>
+<li class="hl"><span>❌</span>Pouštění cizích lidí — použijte videotelefon, zkontrolujte kdo je za dveřmi</li></ul>
+<h2>🔐 Bezpečnost</h2>
+<ul><li class="hl"><span>•</span>Nikdy nenechávejte vchodové dveře otevřené. Nikdy.</li>
+<li class="hl"><span>•</span>Neotevírejte naslepo — ověřte přes videotelefon, že jde o vaši návštěvu.</li></ul>
+<h2>⚠️ Přestupky</h2>
+<ul><li class="hl"><span>•</span>Poprvé: písemné varování.</li>
+<li class="hl"><span>•</span>Podruhé: doporučený dopis.</li>
+<li class="hl"><span>•</span>Poté: pokuta až <strong>€500 za přestupek</strong> + případná náhrada škody.</li>
+<li class="hl"><span>•</span>Opakované závažné obtěžování může vést ke ztrátě práva užívat byt.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Toto je zjednodušené shrnutí. Úplné dokumenty (domovní řád 2017 a smlouva o rozdělení 1973) jsou závazné.</p>
+</div>
+
+<!-- HR: SLOVAK -->
+<div class="card highlight hr-section" data-lang="sk">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Domový poriadok pre obyvateľov</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Zhrnutie domového poriadku a zmluvy o rozdelení — jednoducho.</p>
+<div class="rules">
+<h2>🔑 Váš byt</h2>
+<ul><li class="hl"><span>•</span>Chcete rekonštruovať? Môžete, ale dodržujte stavebné predpisy (NEN-1010). Nosné steny = súhlas VvE potrebný.</li>
+<li class="hl"><span>•</span>Tvrdá podlaha (laminát, drevo)? Iba so zvukovou izoláciou (10 dB, plávajúca konštrukcia). Kuchyňa/kúpeľňa/WC výnimkou.</li></ul>
+<h2>🚪 Spoločné priestory</h2>
+<ul><li class="hl"><span>•</span>Galérie, schodiská, chodby, pivnice — patria všetkým, udržujte ich čisté.</li>
+<li class="hl"><span>•</span>Na galérii vždy nechajte voľný priechod minimálne 90 cm.</li>
+<li class="hl"><span>•</span>Žiadne bicykle, kočíky ani neporiadok na chodbe. Bicykle do pivnice alebo na stojany vonku.</li>
+<li class="hl"><span>•</span>Na schodisku nič nevešajte ani nestavajte. Žiadne rastliny, obrazy, dekorácie.</li>
+<li class="hl"><span>•</span>Deti sa nesmú hrať na chodbách, schodiskách ani v pivniciach.</li></ul>
+<h2>🔇 Hluk a obťažovanie</h2>
+<ul><li class="hl"><span>•</span><strong>Kľud medzi 22:00 a 07:00</strong> — žiadna hudba, nástroje, hlasné zvuky.</li>
+<li class="hl"><span>•</span>Prístroje rušiace rozhlasový/televízny príjem ostatných nie sú povolené.</li></ul>
+<h2>🐕 Domáce zvieratá</h2>
+<ul><li class="hl"><span>•</span>Domáce zvieratá povolené, ak nespôsobujú obťažovanie.</li>
+<li class="hl"><span>•</span>V spoločných priestoroch: vždy na vodítku alebo nesené.</li>
+<li class="hl"><span>•</span>Exkrementy? Okamžite upratať. Bez diskusie.</li></ul>
+<h2>🚫 Prísne zakázané</h2>
+<ul><li class="hl"><span>❌</span>Fajčenie, pitie alkoholu alebo užívanie drog v spoločných priestoroch</li>
+<li class="hl"><span>❌</span>Vyhadzovanie odpadu z balkóna alebo do záhrady</li>
+<li class="hl"><span>❌</span>Grilovanie na balkóne (zápach pre susedov)</li>
+<li class="hl"><span>❌</span>Odpaľovanie ohňostrojov z balkóna, terasy alebo záhrady</li>
+<li class="hl"><span>❌</span>Kŕmenie vtákov (holuby spôsobujú obrovské škody)</li>
+<li class="hl"><span>❌</span>Vstup na strechu (bez povolenia správy)</li>
+<li class="hl"><span>❌</span>Skladovanie horľavých materiálov v pivnici (benzín, petrolej atď.)</li>
+<li class="hl"><span>❌</span>Púšťanie cudzích ľudí — použite videotelefón, skontrolujte kto je za dverami</li></ul>
+<h2>🔐 Bezpečnosť</h2>
+<ul><li class="hl"><span>•</span>Nikdy nenechávajte vchodové dvere otvorené. Nikdy.</li>
+<li class="hl"><span>•</span>Neotvárajte naslepo — overte cez videotelefón, že ide o vašu návštevu.</li></ul>
+<h2>⚠️ Priestupky</h2>
+<ul><li class="hl"><span>•</span>Prvýkrát: písomné varovanie.</li>
+<li class="hl"><span>•</span>Druhýkrát: doporučený list.</li>
+<li class="hl"><span>•</span>Potom: pokuta až <strong>€500 za priestupok</strong> + prípadná náhrada škody.</li>
+<li class="hl"><span>•</span>Opakované závažné obťažovanie môže viesť k strate práva užívať byt.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Toto je zjednodušené zhrnutie. Úplné dokumenty (domový poriadok 2017 a zmluva o rozdelení 1973) sú záväzné.</p>
+</div>
+
+<!-- HR: HUNGARIAN -->
+<div class="card highlight hr-section" data-lang="hu">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Házirend a lakók számára</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">A házirend és az osztási okirat összefoglalása — egyszerűen.</p>
+<div class="rules">
+<h2>🔑 Az Ön lakása</h2>
+<ul><li class="hl"><span>•</span>Felújítana? Lehet, de kövesse az építési előírásokat (NEN-1010). Teherhordó falak = VvE engedély szükséges.</li>
+<li class="hl"><span>•</span>Kemény padló (laminált, fa)? Csak hangszigetelt (10 dB csillapítás, úszó szerkezet). Konyha/fürdőszoba/WC kivétel.</li></ul>
+<h2>🚪 Közös területek</h2>
+<ul><li class="hl"><span>•</span>Galériák, lépcsőházak, folyosók, tárolók — mindenki közös területe, tartsa tisztán.</li>
+<li class="hl"><span>•</span>A galérián mindig legalább 90 cm átjárót hagyjon szabadon.</li>
+<li class="hl"><span>•</span>Kerékpárok, babakocsik vagy limlom a folyosón tilos. Kerékpárok a tárolóba vagy a kinti állványokra.</li>
+<li class="hl"><span>•</span>A lépcsőházban semmit ne akasszon ki vagy tegyen le. Növények, festmények, dekoráció tilos.</li>
+<li class="hl"><span>•</span>Gyerekek nem játszhatnak a folyosókon, lépcsőházakban vagy tárolókban.</li></ul>
+<h2>🔇 Zaj és zavarás</h2>
+<ul><li class="hl"><span>•</span><strong>Csend 22:00 és 07:00 között</strong> — zene, hangszerek, hangos zajok tilosak.</li>
+<li class="hl"><span>•</span>Mások rádió/TV vételét zavaró készülékek nem engedélyezettek.</li></ul>
+<h2>🐕 Háziállatok</h2>
+<ul><li class="hl"><span>•</span>Háziállatok engedélyezettek, amíg nem okoznak zavarást.</li>
+<li class="hl"><span>•</span>Közös területeken: mindig pórázon vagy karon tartva.</li>
+<li class="hl"><span>•</span>Ürülék? Azonnal takarítsa el. Nincs vita.</li></ul>
+<h2>🚫 Szigorúan tilos</h2>
+<ul><li class="hl"><span>❌</span>Dohányzás, alkoholfogyasztás vagy droghasználat közös területeken</li>
+<li class="hl"><span>❌</span>Hulladék dobása az erkélyről vagy a kertbe</li>
+<li class="hl"><span>❌</span>Grillezés az erkélyen (szag a szomszédoknak)</li>
+<li class="hl"><span>❌</span>Tűzijáték az erkélyről, teraszról vagy kertből</li>
+<li class="hl"><span>❌</span>Madarak etetése (galambok hatalmas károkat okoznak)</li>
+<li class="hl"><span>❌</span>Tetőre lépés (az igazgatóság engedélye nélkül)</li>
+<li class="hl"><span>❌</span>Gyúlékony anyagok tárolása a tárolóban (benzin, petróleum stb.)</li>
+<li class="hl"><span>❌</span>Idegenek beengedése — használja a videó kaputelefont, ellenőrizze ki áll az ajtóban</li></ul>
+<h2>🔐 Biztonság</h2>
+<ul><li class="hl"><span>•</span>Soha ne hagyja nyitva a bejárati ajtót. Soha.</li>
+<li class="hl"><span>•</span>Ne nyomja meg vakon az ajtónyitót — ellenőrizze a videó kaputelefonon, hogy az Ön látogatója-e.</li></ul>
+<h2>⚠️ Szabálysértések</h2>
+<ul><li class="hl"><span>•</span>Először: írásbeli figyelmeztetés.</li>
+<li class="hl"><span>•</span>Másodszor: ajánlott levél.</li>
+<li class="hl"><span>•</span>Ezután: bírság <strong>€500-ig szabálysértésenként</strong> + esetleges kártérítés.</li>
+<li class="hl"><span>•</span>Ismétlődő súlyos zavarás a lakáshasználati jog elvesztéséhez vezethet.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ez egy egyszerűsített összefoglaló. A teljes dokumentumok (házirend 2017 és osztási okirat 1973) a mérvadóak.</p>
+</div>
+
+<!-- HR: CROATIAN -->
+<div class="card highlight hr-section" data-lang="hr">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Kućni red za stanare</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Sažetak kućnog reda i ugovora o podjeli — jednostavnim jezikom.</p>
+<div class="rules">
+<h2>🔑 Vaš stan</h2>
+<ul><li class="hl"><span>•</span>Želite renovirati? Možete, ali poštujte građevinske propise (NEN-1010). Nosivi zidovi = suglasnost VvE potrebna.</li>
+<li class="hl"><span>•</span>Tvrdi pod (laminat, drvo)? Samo sa zvučnom izolacijom (10 dB, plivajuća konstrukcija). Kuhinja/kupaonica/WC izuzeti.</li></ul>
+<h2>🚪 Zajednički prostori</h2>
+<ul><li class="hl"><span>•</span>Galerije, stubišta, hodnici, spremišta — zajednički za sve, održavajte ih čistima.</li>
+<li class="hl"><span>•</span>Na galeriji uvijek ostavite slobodan prolaz od najmanje 90 cm.</li>
+<li class="hl"><span>•</span>Bez bicikala, kolica ili smeća u hodniku. Bicikli idu u spremište ili na stalke vani.</li>
+<li class="hl"><span>•</span>Na stubištu ništa ne vješajte ni postavljajte. Bez biljaka, slika, dekoracija.</li>
+<li class="hl"><span>•</span>Djeca se ne smiju igrati u hodnicima, stubištima ili spremištima.</li></ul>
+<h2>🔇 Buka i smetnje</h2>
+<ul><li class="hl"><span>•</span><strong>Tišina između 22:00 i 07:00</strong> — bez glazbe, instrumenata, glasnih zvukova.</li>
+<li class="hl"><span>•</span>Uređaji koji ometaju radio/TV prijem drugih nisu dopušteni.</li></ul>
+<h2>🐕 Kućni ljubimci</h2>
+<ul><li class="hl"><span>•</span>Kućni ljubimci dopušteni, dok ne uzrokuju smetnje.</li>
+<li class="hl"><span>•</span>U zajedničkim prostorima: uvijek na uzici ili nošeni.</li>
+<li class="hl"><span>•</span>Izmet? Odmah očistiti. Bez rasprave.</li></ul>
+<h2>🚫 Strogo zabranjeno</h2>
+<ul><li class="hl"><span>❌</span>Pušenje, pijenje alkohola ili korištenje droga u zajedničkim prostorima</li>
+<li class="hl"><span>❌</span>Bacanje otpada s balkona ili u vrt</li>
+<li class="hl"><span>❌</span>Roštiljanje na balkonu (smrad za susjede)</li>
+<li class="hl"><span>❌</span>Vatromet s balkona, terase ili vrta</li>
+<li class="hl"><span>❌</span>Hranjenje ptica (golubovi uzrokuju ogromnu štetu)</li>
+<li class="hl"><span>❌</span>Pristup krovu (bez odobrenja uprave)</li>
+<li class="hl"><span>❌</span>Skladištenje zapaljivih materijala u spremištu (benzin, petrolej itd.)</li>
+<li class="hl"><span>❌</span>Puštanje stranaca — koristite videofon, provjerite tko je na vratima</li></ul>
+<h2>🔐 Sigurnost</h2>
+<ul><li class="hl"><span>•</span>Nikada ne ostavljajte ulazna vrata otvorena. Nikada.</li>
+<li class="hl"><span>•</span>Ne otvarajte naslijepo — provjerite preko videofona da je vaš posjetitelj.</li></ul>
+<h2>⚠️ Prekršaji</h2>
+<ul><li class="hl"><span>•</span>Prvi put: pisano upozorenje.</li>
+<li class="hl"><span>•</span>Drugi put: preporučeno pismo.</li>
+<li class="hl"><span>•</span>Nakon toga: kazna do <strong>€500 po prekršaju</strong> + moguća naknada štete.</li>
+<li class="hl"><span>•</span>Ponovljene ozbiljne smetnje mogu dovesti do gubitka prava korištenja stana.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podjeli 1973) su mjerodavni.</p>
+</div>
+
+<!-- HR: SERBIAN -->
+<div class="card highlight hr-section" data-lang="sr">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Kućni red za stanare</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Sažetak kućnog reda i ugovora o podeli — jednostavnim jezikom.</p>
+<div class="rules">
+<h2>🔑 Vaš stan</h2>
+<ul><li class="hl"><span>•</span>Želite da renovirate? Možete, ali poštujte građevinske propise (NEN-1010). Noseći zidovi = saglasnost VvE potrebna.</li>
+<li class="hl"><span>•</span>Tvrd pod (laminat, drvo)? Samo sa zvučnom izolacijom (10 dB, plivajuća konstrukcija). Kuhinja/kupatilo/WC izuzeti.</li></ul>
+<h2>🚪 Zajednički prostori</h2>
+<ul><li class="hl"><span>•</span>Galerije, stepeništa, hodnici, ostave — zajednički za sve, održavajte ih čistim.</li>
+<li class="hl"><span>•</span>Na galeriji uvek ostavite slobodan prolaz od najmanje 90 cm.</li>
+<li class="hl"><span>•</span>Bez bicikala, kolica ili smeća u hodniku. Bicikli idu u ostavu ili na stalke napolju.</li>
+<li class="hl"><span>•</span>Na stepeništu ništa ne kačite ni postavljajte. Bez biljaka, slika, dekoracija.</li>
+<li class="hl"><span>•</span>Deca ne smeju da se igraju u hodnicima, stepeništima ili ostavama.</li></ul>
+<h2>🔇 Buka i smetnje</h2>
+<ul><li class="hl"><span>•</span><strong>Tišina između 22:00 i 07:00</strong> — bez muzike, instrumenata, glasnih zvukova.</li>
+<li class="hl"><span>•</span>Uređaji koji ometaju radio/TV prijem drugih nisu dozvoljeni.</li></ul>
+<h2>🐕 Kućni ljubimci</h2>
+<ul><li class="hl"><span>•</span>Kućni ljubimci dozvoljeni, dok ne uzrokuju smetnje.</li>
+<li class="hl"><span>•</span>U zajedničkim prostorima: uvek na povocu ili nošeni.</li>
+<li class="hl"><span>•</span>Izmet? Odmah očistiti. Bez rasprave.</li></ul>
+<h2>🚫 Strogo zabranjeno</h2>
+<ul><li class="hl"><span>❌</span>Pušenje, pijenje alkohola ili korišćenje droga u zajedničkim prostorima</li>
+<li class="hl"><span>❌</span>Bacanje otpada sa balkona ili u baštu</li>
+<li class="hl"><span>❌</span>Roštiljanje na balkonu (smrad za komšije)</li>
+<li class="hl"><span>❌</span>Vatromet sa balkona, terase ili bašte</li>
+<li class="hl"><span>❌</span>Hranjenje ptica (golubovi uzrokuju ogromnu štetu)</li>
+<li class="hl"><span>❌</span>Pristup krovu (bez odobrenja uprave)</li>
+<li class="hl"><span>❌</span>Skladištenje zapaljivih materijala u ostavi (benzin, petrolej itd.)</li>
+<li class="hl"><span>❌</span>Puštanje stranaca — koristite videofon, proverite ko je na vratima</li></ul>
+<h2>🔐 Sigurnost</h2>
+<ul><li class="hl"><span>•</span>Nikada ne ostavljajte ulazna vrata otvorena. Nikada.</li>
+<li class="hl"><span>•</span>Ne otvarajte naslepo — proverite preko videofona da je vaš posetilac.</li></ul>
+<h2>⚠️ Prekršaji</h2>
+<ul><li class="hl"><span>•</span>Prvi put: pisano upozorenje.</li>
+<li class="hl"><span>•</span>Drugi put: preporučeno pismo.</li>
+<li class="hl"><span>•</span>Nakon toga: kazna do <strong>€500 po prekršaju</strong> + moguća naknada štete.</li>
+<li class="hl"><span>•</span>Ponovljene ozbiljne smetnje mogu dovesti do gubitka prava korišćenja stana.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podeli 1973) su merodavni.</p>
+</div>
+
+<!-- HR: UKRAINIAN -->
+<div class="card highlight hr-section" data-lang="uk">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Правила для мешканців</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Стислий виклад домового порядку та акту поділу — простою мовою.</p>
+<div class="rules">
+<h2>🔑 Ваша квартира</h2>
+<ul><li class="hl"><span>•</span>Хочете ремонтувати? Можна, але дотримуйтесь будівельних норм (NEN-1010). Несучі стіни = дозвіл VvE потрібен.</li>
+<li class="hl"><span>•</span>Тверда підлога (ламінат, дерево)? Тільки зі звукоізоляцією (10 дБ, плаваюча конструкція). Кухня/ванна/туалет — виняток.</li></ul>
+<h2>🚪 Спільні приміщення</h2>
+<ul><li class="hl"><span>•</span>Галереї, сходи, коридори, комори — спільні для всіх, тримайте їх чистими.</li>
+<li class="hl"><span>•</span>На галереї завжди залишайте вільний прохід мінімум 90 см.</li>
+<li class="hl"><span>•</span>Жодних велосипедів, колясок чи мотлоху в коридорі. Велосипеди — в комору або на стоянку надворі.</li>
+<li class="hl"><span>•</span>На сходах нічого не вішайте і не ставте. Жодних рослин, картин, декорацій.</li>
+<li class="hl"><span>•</span>Дітям заборонено гратися в коридорах, на сходах та в коморах.</li></ul>
+<h2>🔇 Шум і незручності</h2>
+<ul><li class="hl"><span>•</span><strong>Тиша між 22:00 і 07:00</strong> — без музики, інструментів, гучних звуків.</li>
+<li class="hl"><span>•</span>Прилади, що заважають радіо/ТВ прийому інших, заборонені.</li></ul>
+<h2>🐕 Домашні тварини</h2>
+<ul><li class="hl"><span>•</span>Домашні тварини дозволені, якщо не завдають незручностей.</li>
+<li class="hl"><span>•</span>У спільних приміщеннях: завжди на повідку або на руках.</li>
+<li class="hl"><span>•</span>Екскременти? Негайно прибрати. Без обговорень.</li></ul>
+<h2>🚫 Суворо заборонено</h2>
+<ul><li class="hl"><span>❌</span>Паління, вживання алкоголю чи наркотиків у спільних приміщеннях</li>
+<li class="hl"><span>❌</span>Викидання сміття з балкона або в сад</li>
+<li class="hl"><span>❌</span>Барбекю на балконі (запах для сусідів)</li>
+<li class="hl"><span>❌</span>Феєрверки з балкона, тераси чи саду</li>
+<li class="hl"><span>❌</span>Годування птахів (голуби завдають величезної шкоди)</li>
+<li class="hl"><span>❌</span>Доступ на дах (без дозволу управління)</li>
+<li class="hl"><span>❌</span>Зберігання легкозаймистих матеріалів у коморі (бензин, гас тощо)</li>
+<li class="hl"><span>❌</span>Впускання незнайомців — використовуйте відеодомофон, перевірте хто за дверима</li></ul>
+<h2>🔐 Безпека</h2>
+<ul><li class="hl"><span>•</span>Ніколи не залишайте вхідні двері відчиненими. Ніколи.</li>
+<li class="hl"><span>•</span>Не відчиняйте наосліп — перевірте через відеодомофон, що це ваш гість.</li></ul>
+<h2>⚠️ Порушення</h2>
+<ul><li class="hl"><span>•</span>Вперше: письмове попередження.</li>
+<li class="hl"><span>•</span>Вдруге: рекомендований лист.</li>
+<li class="hl"><span>•</span>Далі: штраф до <strong>€500 за порушення</strong> + можливе відшкодування збитків.</li>
+<li class="hl"><span>•</span>Повторні серйозні порушення можуть призвести до втрати права користування квартирою.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Це спрощений виклад. Повні документи (домовий порядок 2017 та акт поділу 1973) є офіційними.</p>
+</div>
+
+<!-- HR: RUSSIAN -->
+<div class="card highlight hr-section" data-lang="ru">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 Правила для жильцов</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">Краткое изложение домового порядка и акта раздела — простым языком.</p>
+<div class="rules">
+<h2>🔑 Ваша квартира</h2>
+<ul><li class="hl"><span>•</span>Хотите сделать ремонт? Можно, но соблюдайте строительные нормы (NEN-1010). Несущие стены = разрешение VvE обязательно.</li>
+<li class="hl"><span>•</span>Твёрдый пол (ламинат, дерево)? Только со звукоизоляцией (10 дБ, плавающая конструкция). Кухня/ванная/туалет — исключение.</li></ul>
+<h2>🚪 Общие помещения</h2>
+<ul><li class="hl"><span>•</span>Галереи, лестницы, коридоры, кладовые — общие для всех, содержите в чистоте.</li>
+<li class="hl"><span>•</span>На галерее всегда оставляйте свободный проход минимум 90 см.</li>
+<li class="hl"><span>•</span>Никаких велосипедов, колясок или хлама в коридоре. Велосипеды — в кладовую или на стоянку на улице.</li>
+<li class="hl"><span>•</span>На лестнице ничего не вешайте и не ставьте. Никаких растений, картин, декораций.</li>
+<li class="hl"><span>•</span>Детям запрещено играть в коридорах, на лестницах и в кладовых.</li></ul>
+<h2>🔇 Шум и неудобства</h2>
+<ul><li class="hl"><span>•</span><strong>Тишина с 22:00 до 07:00</strong> — без музыки, инструментов, громких звуков.</li>
+<li class="hl"><span>•</span>Приборы, мешающие радио/ТВ приёму других, запрещены.</li></ul>
+<h2>🐕 Домашние животные</h2>
+<ul><li class="hl"><span>•</span>Домашние животные разрешены, если не причиняют неудобств.</li>
+<li class="hl"><span>•</span>В общих помещениях: всегда на поводке или на руках.</li>
+<li class="hl"><span>•</span>Экскременты? Немедленно убрать. Без обсуждений.</li></ul>
+<h2>🚫 Строго запрещено</h2>
+<ul><li class="hl"><span>❌</span>Курение, распитие алкоголя или употребление наркотиков в общих помещениях</li>
+<li class="hl"><span>❌</span>Выбрасывание мусора с балкона или в сад</li>
+<li class="hl"><span>❌</span>Барбекю на балконе (запах для соседей)</li>
+<li class="hl"><span>❌</span>Фейерверки с балкона, террасы или из сада</li>
+<li class="hl"><span>❌</span>Кормление птиц (голуби наносят огромный ущерб)</li>
+<li class="hl"><span>❌</span>Выход на крышу (без разрешения управления)</li>
+<li class="hl"><span>❌</span>Хранение горючих материалов в кладовой (бензин, керосин и т.д.)</li>
+<li class="hl"><span>❌</span>Впускание незнакомцев — используйте видеодомофон, проверьте кто за дверью</li></ul>
+<h2>🔐 Безопасность</h2>
+<ul><li class="hl"><span>•</span>Никогда не оставляйте входную дверь открытой. Никогда.</li>
+<li class="hl"><span>•</span>Не открывайте вслепую — проверьте через видеодомофон, что это ваш гость.</li></ul>
+<h2>⚠️ Нарушения</h2>
+<ul><li class="hl"><span>•</span>Первый раз: письменное предупреждение.</li>
+<li class="hl"><span>•</span>Второй раз: заказное письмо.</li>
+<li class="hl"><span>•</span>Далее: штраф до <strong>€500 за нарушение</strong> + возможное возмещение ущерба.</li>
+<li class="hl"><span>•</span>Повторные серьёзные нарушения могут привести к лишению права пользования квартирой.</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Это упрощённое изложение. Полные документы (домовой порядок 2017 и акт раздела 1973) являются официальными.</p>
+</div>
+
+<!-- HR: CHINESE -->
+<div class="card highlight hr-section" data-lang="zh">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px;border:none">🏠 住户守则</h2>
+<p style="text-align:center;color:#666;font-size:.9em;margin-bottom:20px">房屋规则和分割契约摘要——用简单的语言。</p>
+<div class="rules">
+<h2>🔑 您的公寓</h2>
+<ul><li class="hl"><span>•</span>想装修？可以，但要遵守建筑规范（NEN-1010）。承重墙 = 需要VvE许可。</li>
+<li class="hl"><span>•</span>铺硬地板（复合地板、木地板）？仅限隔音处理（10分贝减震，浮动结构）。厨房/浴室/卫生间除外。</li></ul>
+<h2>🚪 公共区域</h2>
+<ul><li class="hl"><span>•</span>走廊、楼梯间、通道、储藏室——属于所有人，保持干净整洁。</li>
+<li class="hl"><span>•</span>走廊始终保持至少90厘米的通行宽度。</li>
+<li class="hl"><span>•</span>走廊禁止放置自行车、婴儿车或杂物。自行车放储藏室或室外车架。</li>
+<li class="hl"><span>•</span>楼梯间禁止悬挂或放置任何物品。禁止植物、画作、装饰品。</li>
+<li class="hl"><span>•</span>儿童不得在走廊、楼梯间或储藏室玩耍。</li></ul>
+<h2>🔇 噪音与干扰</h2>
+<ul><li class="hl"><span>•</span><strong>22:00至07:00保持安静</strong>——禁止音乐、乐器、大声喧哗。</li>
+<li class="hl"><span>•</span>干扰他人无线电/电视接收的设备不被允许。</li></ul>
+<h2>🐕 宠物</h2>
+<ul><li class="hl"><span>•</span>允许养宠物，但不得造成干扰。</li>
+<li class="hl"><span>•</span>在公共区域：始终牵绳或抱着。</li>
+<li class="hl"><span>•</span>宠物粪便？立即清理。没有例外。</li></ul>
+<h2>🚫 严格禁止</h2>
+<ul><li class="hl"><span>❌</span>在公共区域吸烟、饮酒或使用毒品</li>
+<li class="hl"><span>❌</span>从阳台扔垃圾或倒入花园</li>
+<li class="hl"><span>❌</span>在阳台烧烤（邻居会受异味困扰）</li>
+<li class="hl"><span>❌</span>从阳台、露台或花园燃放烟花</li>
+<li class="hl"><span>❌</span>喂鸟（鸽子造成巨大损害）</li>
+<li class="hl"><span>❌</span>进入屋顶（除非管理部门授权）</li>
+<li class="hl"><span>❌</span>在储藏室存放易燃材料（汽油、煤油等）</li>
+<li class="hl"><span>❌</span>让陌生人进入——使用可视对讲机，确认门外是谁</li></ul>
+<h2>🔐 安全</h2>
+<ul><li class="hl"><span>•</span>永远不要让大门敞开。永远不要。</li>
+<li class="hl"><span>•</span>不要盲目开门——通过可视对讲机确认是您的访客。</li></ul>
+<h2>⚠️ 违规</h2>
+<ul><li class="hl"><span>•</span>第一次：书面警告。</li>
+<li class="hl"><span>•</span>第二次：挂号信。</li>
+<li class="hl"><span>•</span>之后：每次违规罚款最高<strong>€500</strong> + 可能的损害赔偿。</li>
+<li class="hl"><span>•</span>反复严重违规可导致失去公寓使用权。</li></ul>
+</div>
+<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">这是简化摘要。完整文件（2017年房屋规则和1973年分割契约）具有法律效力。</p>
 </div>
 
 <div class="card docs">
@@ -440,6 +993,7 @@ Dit is een vereenvoudigde samenvatting. De volledige documenten (huishoudelijk r
 
 <script>
 const langs = [
+  {code:'nl',label:'Nederlands'},
   {code:'en',label:'English'},
   {code:'de',label:'Deutsch'},
   {code:'pl',label:'Polski'},
@@ -466,16 +1020,18 @@ langs.forEach(l => {
 
 function show(code) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.hr-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
   var el = document.querySelector('.section[data-lang="'+code+'"]');
+  var hr = document.querySelector('.hr-section[data-lang="'+code+'"]');
   var btn = nav.querySelector('[data-lang="'+code+'"]');
-  if (!el) { el = document.querySelector('.section[data-lang="en"]'); btn = nav.querySelector('[data-lang="en"]'); }
+  if (!el) { code='nl'; el = document.querySelector('.section[data-lang="nl"]'); hr = document.querySelector('.hr-section[data-lang="nl"]'); btn = nav.querySelector('[data-lang="nl"]'); }
   el.classList.add('active');
+  if (hr) hr.classList.add('active');
   if (btn) btn.classList.add('active');
 }
 
-// Auto-detect browser language
-const browserLang = (navigator.language || 'en').split('-')[0].toLowerCase();
+var browserLang = (navigator.language || 'nl').split('-')[0].toLowerCase();
 show(browserLang);
 </script>
 </body>
