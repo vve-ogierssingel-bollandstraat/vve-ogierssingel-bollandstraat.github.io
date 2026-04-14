@@ -397,10 +397,9 @@ langs.forEach(l => {
 function show(code) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
-  // Find matching section, fallback to English
-  var el = document.querySelector('[data-lang="'+code+'"]');
+  var el = document.querySelector('.section[data-lang="'+code+'"]');
   var btn = nav.querySelector('[data-lang="'+code+'"]');
-  if (!el) { el = document.querySelector('[data-lang="en"]'); btn = nav.querySelector('[data-lang="en"]'); }
+  if (!el) { el = document.querySelector('.section[data-lang="en"]'); btn = nav.querySelector('[data-lang="en"]'); }
   el.classList.add('active');
   if (btn) btn.classList.add('active');
 }
