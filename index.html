@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Building Rules - Gebouwregels</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111;line-height:1.5;padding:16px}
+.wrap{max-width:640px;margin:0 auto}
+.card{background:#fff;border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.mirror{font-size:1.15em;font-weight:bold;text-align:center;padding:32px 24px}
+.mirror .q{font-size:1.3em;margin-bottom:12px}
+.rules{padding:16px 24px}
+.rules h2{font-size:1.1em;margin-bottom:8px;border-bottom:2px solid #e00;padding-bottom:4px}
+.rules ul{list-style:none;padding:0;margin:8px 0 16px}
+.rules li{padding:4px 0 4px 28px;position:relative}
+.rules li::before{content:"🚫";position:absolute;left:0;top:4px;font-size:.9em}
+.quiet li::before{content:"🤫"}
+.areas li::before{content:"📍"}
+.warn{font-size:.9em;color:#666;text-align:center;padding:12px;border-top:1px solid #eee;margin-top:8px}
+.icons{display:flex;justify-content:center;gap:16px;font-size:2em;padding:8px 0 16px;flex-wrap:wrap}
+.lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
+.lang-nav button{border:1px solid #ccc;background:#fff;border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer}
+.lang-nav button.active{background:#111;color:#fff;border-color:#111}
+.section{display:none}
+.section.active{display:block}
+.docs{text-align:center;padding:16px}
+.docs a{color:#1a73e8;text-decoration:none;font-weight:bold}
+footer{text-align:center;font-size:.75em;color:#999;padding:16px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="card">
+<div class="icons">🚭 🚫💊 🚫🍺 🤫📱 🤫💬</div>
+<div class="lang-nav" id="langNav"></div>
+</div>
+
+<!-- ENGLISH -->
+<div class="section" data-lang="en">
+<div class="card mirror">
+<div class="q">Why do you do this outside and not inside?</div>
+Because smoke, smell, noise and nuisance are not pleasant in your room.<br>
+Your neighbors do not want it either.
+</div>
+<div class="card rules">
+<h2>Prohibited in shared areas</h2>
+<ul>
+<li>Smoking</li>
+<li>Drug use</li>
+<li>Drinking alcohol</li>
+<li>Loud phone calls</li>
+<li>Loud talking or music</li>
+</ul>
+<h2>Quiet hours: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Extra silence in hallways, stairwells and galleries</li>
+</ul>
+<h2>Shared areas</h2>
+<ul class="areas">
+<li>Balconies, galleries, stairwells</li>
+<li>Entrances, hallways, storage corridors</li>
+</ul>
+<div class="warn">Repeated nuisance will be reported to building management.</div>
+</div>
+</div>
+
+<!-- GERMAN -->
+<div class="section" data-lang="de">
+<div class="card mirror">
+<div class="q">Warum tun Sie das draußen und nicht drinnen?</div>
+Weil Rauch, Geruch, Lärm und Belästigung auch in Ihrem Zimmer unangenehm sind.<br>
+Ihre Nachbarn wollen das auch nicht.
+</div>
+<div class="card rules">
+<h2>In Gemeinschaftsbereichen verboten</h2>
+<ul>
+<li>Rauchen</li>
+<li>Drogenkonsum</li>
+<li>Alkohol trinken</li>
+<li>Laute Telefonate</li>
+<li>Lautes Reden oder Musik</li>
+</ul>
+<h2>Ruhezeiten: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Besondere Ruhe in Fluren, Treppenhäusern und Laubengängen</li>
+</ul>
+<h2>Gemeinschaftsbereiche</h2>
+<ul class="areas">
+<li>Balkone, Laubengänge, Treppenhäuser</li>
+<li>Eingänge, Flure, Abstellgänge</li>
+</ul>
+<div class="warn">Wiederholte Belästigung wird der Hausverwaltung gemeldet.</div>
+</div>
+</div>
+
+<!-- POLISH -->
+<div class="section" data-lang="pl">
+<div class="card mirror">
+<div class="q">Dlaczego robisz to na zewnątrz, a nie w środku?</div>
+Bo dym, zapach, hałas i uciążliwości są nieprzyjemne także w twoim pokoju.<br>
+Twoi sąsiedzi też tego nie chcą.
+</div>
+<div class="card rules">
+<h2>Zakazy w częściach wspólnych</h2>
+<ul>
+<li>Palenie</li>
+<li>Używanie narkotyków</li>
+<li>Picie alkoholu</li>
+<li>Głośne rozmowy telefoniczne</li>
+<li>Głośne rozmowy lub muzyka</li>
+</ul>
+<h2>Cisza nocna: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Szczególna cisza na korytarzach, klatkach schodowych i galeriach</li>
+</ul>
+<div class="warn">Powtarzające się uciążliwości będą zgłaszane do zarządu budynku.</div>
+</div>
+</div>
+
+<!-- ROMANIAN -->
+<div class="section" data-lang="ro">
+<div class="card mirror">
+<div class="q">De ce faci asta afară și nu înăuntru?</div>
+Pentru că fumul, mirosul, zgomotul și deranjul nu sunt plăcute nici în camera ta.<br>
+Vecinii tăi nu vor asta nici ei.
+</div>
+<div class="card rules">
+<h2>Interzis în zonele comune</h2>
+<ul>
+<li>Fumatul</li>
+<li>Consumul de droguri</li>
+<li>Consumul de alcool</li>
+<li>Convorbiri telefonice zgomotoase</li>
+<li>Vorbitul tare sau muzica</li>
+</ul>
+<h2>Ore de liniște: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Liniște suplimentară în holuri, scări și galerii</li>
+</ul>
+<div class="warn">Deranjul repetat va fi raportat administrației clădirii.</div>
+</div>
+</div>
+
+<!-- BULGARIAN -->
+<div class="section" data-lang="bg">
+<div class="card mirror">
+<div class="q">Защо правиш това навън, а не вътре?</div>
+Защото дим, миризма, шум и неудобства не са приятни и в твоята стая.<br>
+Съседите ти също не искат това.
+</div>
+<div class="card rules">
+<h2>Забранено в общите части</h2>
+<ul>
+<li>Пушене</li>
+<li>Употреба на наркотици</li>
+<li>Пиене на алкохол</li>
+<li>Силни телефонни разговори</li>
+<li>Силен говор или музика</li>
+</ul>
+<h2>Тихи часове: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Допълнителна тишина в коридорите, стълбищата и галериите</li>
+</ul>
+<div class="warn">Повтарящи се нарушения ще бъдат докладвани на управата на сградата.</div>
+</div>
+</div>
+
+<!-- CZECH -->
+<div class="section" data-lang="cs">
+<div class="card mirror">
+<div class="q">Proč to děláte venku a ne uvnitř?</div>
+Protože kouř, zápach, hluk a obtěžování nejsou příjemné ani ve vašem pokoji.<br>
+Vaši sousedé to také nechtějí.
+</div>
+<div class="card rules">
+<h2>Zakázáno ve společných prostorách</h2>
+<ul>
+<li>Kouření</li>
+<li>Užívání drog</li>
+<li>Pití alkoholu</li>
+<li>Hlasité telefonování</li>
+<li>Hlasité hovory nebo hudba</li>
+</ul>
+<h2>Noční klid: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Zvláštní klid na chodbách, schodištích a galeriích</li>
+</ul>
+<div class="warn">Opakované obtěžování bude nahlášeno správě budovy.</div>
+</div>
+</div>
+
+<!-- SLOVAK -->
+<div class="section" data-lang="sk">
+<div class="card mirror">
+<div class="q">Prečo to robíte vonku a nie vnútri?</div>
+Pretože dym, zápach, hluk a obťažovanie nie sú príjemné ani vo vašej izbe.<br>
+Vaši susedia to tiež nechcú.
+</div>
+<div class="card rules">
+<h2>Zakázané v spoločných priestoroch</h2>
+<ul>
+<li>Fajčenie</li>
+<li>Užívanie drog</li>
+<li>Pitie alkoholu</li>
+<li>Hlasné telefonovanie</li>
+<li>Hlasné rozhovory alebo hudba</li>
+</ul>
+<h2>Nočný kľud: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Zvláštny kľud na chodbách, schodiskách a galériách</li>
+</ul>
+<div class="warn">Opakované obťažovanie bude nahlásené správe budovy.</div>
+</div>
+</div>
+
+<!-- HUNGARIAN -->
+<div class="section" data-lang="hu">
+<div class="card mirror">
+<div class="q">Miért csinálod ezt kint és nem bent?</div>
+Mert a füst, a szag, a zaj és a zavarás a te szobádban sem kellemes.<br>
+A szomszédaid sem akarják ezt.
+</div>
+<div class="card rules">
+<h2>Tilos a közös területeken</h2>
+<ul>
+<li>Dohányzás</li>
+<li>Drogfogyasztás</li>
+<li>Alkoholfogyasztás</li>
+<li>Hangos telefonálás</li>
+<li>Hangos beszélgetés vagy zene</li>
+</ul>
+<h2>Csendes órák: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Különleges csend a folyosókon, lépcsőházakban és galériákon</li>
+</ul>
+<div class="warn">Az ismétlődő zavarást jelentik az épületkezelőnek.</div>
+</div>
+</div>
+
+<!-- CROATIAN -->
+<div class="section" data-lang="hr">
+<div class="card mirror">
+<div class="q">Zašto to radite vani, a ne unutra?</div>
+Jer dim, miris, buka i smetnje nisu ugodni ni u vašoj sobi.<br>
+Vaši susjedi to također ne žele.
+</div>
+<div class="card rules">
+<h2>Zabranjeno u zajedničkim prostorima</h2>
+<ul>
+<li>Pušenje</li>
+<li>Korištenje droga</li>
+<li>Konzumacija alkohola</li>
+<li>Glasni telefonski razgovori</li>
+<li>Glasno pričanje ili glazba</li>
+</ul>
+<h2>Mirni sati: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Posebna tišina u hodnicima, stubištima i galerijama</li>
+</ul>
+<div class="warn">Ponovljene smetnje bit će prijavljene upravi zgrade.</div>
+</div>
+</div>
+
+<!-- SERBIAN -->
+<div class="section" data-lang="sr">
+<div class="card mirror">
+<div class="q">Zašto to radite napolju, a ne unutra?</div>
+Jer dim, miris, buka i smetnje nisu prijatni ni u vašoj sobi.<br>
+Vaši komšije to takođe ne žele.
+</div>
+<div class="card rules">
+<h2>Zabranjeno u zajedničkim prostorima</h2>
+<ul>
+<li>Pušenje</li>
+<li>Korišćenje droga</li>
+<li>Konzumacija alkohola</li>
+<li>Glasni telefonski razgovori</li>
+<li>Glasno pričanje ili muzika</li>
+</ul>
+<h2>Mirni sati: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Posebna tišina u hodnicima, stepeništima i galerijama</li>
+</ul>
+<div class="warn">Ponovljene smetnje biće prijavljene upravi zgrade.</div>
+</div>
+</div>
+
+<!-- UKRAINIAN -->
+<div class="section" data-lang="uk">
+<div class="card mirror">
+<div class="q">Чому ви робите це надворі, а не всередині?</div>
+Бо дим, запах, шум і незручності неприємні і у вашій кімнаті.<br>
+Ваші сусіди цього теж не хочуть.
+</div>
+<div class="card rules">
+<h2>Заборонено у спільних зонах</h2>
+<ul>
+<li>Паління</li>
+<li>Вживання наркотиків</li>
+<li>Вживання алкоголю</li>
+<li>Гучні телефонні розмови</li>
+<li>Гучні розмови або музика</li>
+</ul>
+<h2>Години тиші: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Додаткова тиша в коридорах, на сходах та галереях</li>
+</ul>
+<div class="warn">Повторні порушення будуть повідомлені управлінню будинку.</div>
+</div>
+</div>
+
+<!-- RUSSIAN -->
+<div class="section" data-lang="ru">
+<div class="card mirror">
+<div class="q">Почему вы делаете это снаружи, а не внутри?</div>
+Потому что дым, запах, шум и неудобства неприятны и в вашей комнате.<br>
+Ваши соседи тоже этого не хотят.
+</div>
+<div class="card rules">
+<h2>Запрещено в общих зонах</h2>
+<ul>
+<li>Курение</li>
+<li>Употребление наркотиков</li>
+<li>Употребление алкоголя</li>
+<li>Громкие телефонные разговоры</li>
+<li>Громкие разговоры или музыка</li>
+</ul>
+<h2>Часы тишины: 22:00 – 07:00</h2>
+<ul class="quiet">
+<li>Дополнительная тишина в коридорах, на лестницах и галереях</li>
+</ul>
+<div class="warn">Повторные нарушения будут сообщены управлению здания.</div>
+</div>
+</div>
+
+<!-- CHINESE -->
+<div class="section" data-lang="zh">
+<div class="card mirror">
+<div class="q">为什么你在外面做这些而不是在里面？</div>
+因为烟味、气味、噪音和干扰在你的房间里也不舒服。<br>
+你的邻居也不想要这些。
+</div>
+<div class="card rules">
+<h2>公共区域禁止行为</h2>
+<ul>
+<li>吸烟</li>
+<li>使用毒品</li>
+<li>饮酒</li>
+<li>大声打电话</li>
+<li>大声说话或播放音乐</li>
+</ul>
+<h2>安静时间：22:00 – 07:00</h2>
+<ul class="quiet">
+<li>走廊、楼梯间和走廊需要特别安静</li>
+</ul>
+<div class="warn">反复违规将报告给物业管理部门。</div>
+</div>
+</div>
+
+<div class="card docs">
+<a href="verduurzaming.html">📄 Verduurzamingsplan VvE (NL)</a>
+</div>
+
+<footer>VvE Ogierssingel 263/301 – Bollandstraat 29/35, Rotterdam</footer>
+
+</div>
+
+<script>
+const langs = [
+  {code:'en',label:'English'},
+  {code:'de',label:'Deutsch'},
+  {code:'pl',label:'Polski'},
+  {code:'ro',label:'Română'},
+  {code:'bg',label:'Български'},
+  {code:'cs',label:'Čeština'},
+  {code:'sk',label:'Slovenčina'},
+  {code:'hu',label:'Magyar'},
+  {code:'hr',label:'Hrvatski'},
+  {code:'sr',label:'Srpski'},
+  {code:'uk',label:'Українська'},
+  {code:'ru',label:'Русский'},
+  {code:'zh',label:'中文'}
+];
+
+const nav = document.getElementById('langNav');
+langs.forEach(l => {
+  const btn = document.createElement('button');
+  btn.textContent = l.label;
+  btn.dataset.lang = l.code;
+  btn.onclick = () => show(l.code);
+  nav.appendChild(btn);
+});
+
+function show(code) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
+  const el = document.querySelector('[data-lang="'+code+'"]');
+  if (el) {
+    el.classList.add('active');
+    nav.querySelector('[data-lang="'+code+'"]').classList.add('active');
+  } else {
+    document.querySelector('[data-lang="en"]').classList.add('active');
+    nav.querySelector('[data-lang="en"]').classList.add('active');
+  }
+}
+
+// Auto-detect browser language
+const browserLang = (navigator.language || 'en').split('-')[0].toLowerCase();
+show(browserLang);
+</script>
+</body>
+</html>
