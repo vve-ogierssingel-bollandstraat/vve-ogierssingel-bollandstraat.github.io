@@ -39,7 +39,7 @@ footer{text-align:center;font-size:.75em;color:#999;padding:16px 0}
 </div>
 
 <!-- ENGLISH -->
-<div class="section" data-lang="en">
+<div class="section active" data-lang="en">
 <div class="card mirror">
 <div class="q">Why do you do this outside and not inside?</div>
 Because smoke, smell, noise and nuisance are not pleasant in your room.<br>
@@ -397,14 +397,12 @@ langs.forEach(l => {
 function show(code) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
-  const el = document.querySelector('[data-lang="'+code+'"]');
-  if (el) {
-    el.classList.add('active');
-    nav.querySelector('[data-lang="'+code+'"]').classList.add('active');
-  } else {
-    document.querySelector('[data-lang="en"]').classList.add('active');
-    nav.querySelector('[data-lang="en"]').classList.add('active');
-  }
+  // Find matching section, fallback to English
+  var el = document.querySelector('[data-lang="'+code+'"]');
+  var btn = nav.querySelector('[data-lang="'+code+'"]');
+  if (!el) { el = document.querySelector('[data-lang="en"]'); btn = nav.querySelector('[data-lang="en"]'); }
+  el.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // Auto-detect browser language
