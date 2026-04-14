@@ -5,36 +5,41 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gebouwregels - Building Rules</title>
 <style>
+:root{--bg:#f7f7f7;--text:#111;--card:#fff;--card-shadow:rgba(0,0,0,.1);--border:#ccc;--btn-bg:#fff;--btn-active-bg:#111;--btn-active-text:#fff;--warn:#666;--line:#eee;--link:#1a73e8;--accent:#1a73e8;--rule-line:#e00;--footer:#999;--muted:#666}
+[data-theme="dark"]{--bg:#1a1a2e;--text:#e0e0e0;--card:#16213e;--card-shadow:rgba(0,0,0,.4);--border:#334;--btn-bg:#1a1a2e;--btn-active-bg:#e94560;--btn-active-text:#fff;--warn:#999;--line:#334;--link:#4fc3f7;--accent:#4fc3f7;--rule-line:#e94560;--footer:#777;--muted:#aaa}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;color:#111;line-height:1.5;padding:16px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:16px;transition:background .3s,color .3s}
 .wrap{max-width:640px;margin:0 auto}
-.card{background:#fff;border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.card{background:var(--card);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px var(--card-shadow);transition:background .3s}
 .mirror{font-size:1.15em;font-weight:bold;text-align:center;padding:32px 24px}
 .mirror .q{font-size:1.3em;margin-bottom:12px}
 .rules{padding:16px 24px}
-.rules h2{font-size:1.1em;margin-bottom:8px;border-bottom:2px solid #e00;padding-bottom:4px}
+.rules h2{font-size:1.1em;margin-bottom:8px;border-bottom:2px solid var(--rule-line);padding-bottom:4px}
 .rules ul{list-style:none;padding:0;margin:8px 0 16px}
 .rules li{padding:4px 0 4px 28px;position:relative}
 .rules li::before{content:"🚫";position:absolute;left:0;top:4px;font-size:.9em}
 .quiet li::before{content:"🤫"}
 .areas li::before{content:"📍"}
-.warn{font-size:.9em;color:#666;text-align:center;padding:12px;border-top:1px solid #eee;margin-top:8px}
+.warn{font-size:.9em;color:var(--warn);text-align:center;padding:12px;border-top:1px solid var(--line);margin-top:8px}
 .icons{display:flex;justify-content:center;gap:16px;font-size:2em;padding:8px 0 16px;flex-wrap:wrap}
 .lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
-.lang-nav button{border:1px solid #ccc;background:#fff;border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer}
-.lang-nav button.active{background:#111;color:#fff;border-color:#111}
+.lang-nav button{border:1px solid var(--border);background:var(--btn-bg);color:var(--text);border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer;transition:all .2s}
+.lang-nav button.active{background:var(--btn-active-bg);color:var(--btn-active-text);border-color:var(--btn-active-bg)}
 .section,.hr-section{display:none}
 .section.active,.hr-section.active{display:block}
-.highlight{border-left:4px solid #1a73e8}
-.highlight h2{color:#1a73e8;border-bottom-color:#1a73e8}
+.highlight{border-left:4px solid var(--accent)}
+.highlight h2{color:var(--accent);border-bottom-color:var(--accent)}
 .hl{padding:4px 0 4px 28px;position:relative}
 .hl span{position:absolute;left:0}
 .docs{text-align:center;padding:16px}
-.docs a{color:#1a73e8;text-decoration:none;font-weight:bold}
-footer{text-align:center;font-size:.75em;color:#999;padding:16px 0}
+.docs a{color:var(--link);text-decoration:none;font-weight:bold}
+footer{text-align:center;font-size:.75em;color:var(--footer);padding:16px 0}
+.theme-toggle{position:fixed;top:12px;right:12px;background:var(--card);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;font-size:1.3em;cursor:pointer;box-shadow:0 2px 6px var(--card-shadow);z-index:100;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.theme-toggle:hover{transform:scale(1.1)}
 </style>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
 <div class="wrap">
 
 <div class="card">
@@ -434,7 +439,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Daarna: boete tot <strong>€500 per overtreding</strong> + eventuele schadevergoeding.</li>
 <li class="hl"><span>•</span>Bij herhaaldelijke ernstige overlast kan je het gebruiksrecht van je woning kwijtraken.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Dit is een vereenvoudigde samenvatting. De volledige documenten (huishoudelijk reglement 2017 &amp; splitsingsreglement 1973) zijn leidend.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Dit is een vereenvoudigde samenvatting. De volledige documenten (huishoudelijk reglement 2017 &amp; splitsingsreglement 1973) zijn leidend.</p>
 </div>
 
 <!-- HR: ENGLISH -->
@@ -476,7 +481,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>After that: fine up to <strong>€500 per violation</strong> + possible damages.</li>
 <li class="hl"><span>•</span>Repeated serious nuisance can result in losing the right to use your apartment.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">This is a simplified summary. The full documents (house rules 2017 &amp; split deed 1973) are authoritative.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">This is a simplified summary. The full documents (house rules 2017 &amp; split deed 1973) are authoritative.</p>
 </div>
 
 <!-- HR: GERMAN -->
@@ -518,7 +523,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Danach: Geldbuße bis <strong>€500 pro Verstoß</strong> + möglicher Schadensersatz.</li>
 <li class="hl"><span>•</span>Bei wiederholter schwerer Belästigung kann das Nutzungsrecht entzogen werden.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Dies ist eine vereinfachte Zusammenfassung. Die vollständigen Dokumente (Hausordnung 2017 &amp; Teilungsverordnung 1973) sind maßgeblich.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Dies ist eine vereinfachte Zusammenfassung. Die vollständigen Dokumente (Hausordnung 2017 &amp; Teilungsverordnung 1973) sind maßgeblich.</p>
 </div>
 
 <!-- HR: POLISH -->
@@ -560,7 +565,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Potem: kara do <strong>€500 za naruszenie</strong> + ewentualne odszkodowanie.</li>
 <li class="hl"><span>•</span>Powtarzające się poważne uciążliwości mogą skutkować utratą prawa do korzystania z mieszkania.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">To jest uproszczone podsumowanie. Pełne dokumenty (regulamin 2017 i akt podziału 1973) są wiążące.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">To jest uproszczone podsumowanie. Pełne dokumenty (regulamin 2017 i akt podziału 1973) są wiążące.</p>
 </div>
 
 <!-- HR: ROMANIAN -->
@@ -602,7 +607,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Apoi: amendă până la <strong>€500 per încălcare</strong> + eventuale despăgubiri.</li>
 <li class="hl"><span>•</span>Deranjul grav repetat poate duce la pierderea dreptului de utilizare a apartamentului.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Acesta este un rezumat simplificat. Documentele complete (regulament 2017 &amp; act de separare 1973) sunt cele oficiale.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Acesta este un rezumat simplificat. Documentele complete (regulament 2017 &amp; act de separare 1973) sunt cele oficiale.</p>
 </div>
 
 <!-- HR: BULGARIAN -->
@@ -644,7 +649,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>След това: глоба до <strong>€500 на нарушение</strong> + евентуално обезщетение.</li>
 <li class="hl"><span>•</span>Повтарящи се сериозни нарушения могат да доведат до загуба на правото на ползване на жилището.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Това е опростено обобщение. Пълните документи (правилник 2017 и акт за разделяне 1973) са водещи.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Това е опростено обобщение. Пълните документи (правилник 2017 и акт за разделяне 1973) са водещи.</p>
 </div>
 
 <!-- HR: CZECH -->
@@ -686,7 +691,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Poté: pokuta až <strong>€500 za přestupek</strong> + případná náhrada škody.</li>
 <li class="hl"><span>•</span>Opakované závažné obtěžování může vést ke ztrátě práva užívat byt.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Toto je zjednodušené shrnutí. Úplné dokumenty (domovní řád 2017 a smlouva o rozdělení 1973) jsou závazné.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Toto je zjednodušené shrnutí. Úplné dokumenty (domovní řád 2017 a smlouva o rozdělení 1973) jsou závazné.</p>
 </div>
 
 <!-- HR: SLOVAK -->
@@ -728,7 +733,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Potom: pokuta až <strong>€500 za priestupok</strong> + prípadná náhrada škody.</li>
 <li class="hl"><span>•</span>Opakované závažné obťažovanie môže viesť k strate práva užívať byt.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Toto je zjednodušené zhrnutie. Úplné dokumenty (domový poriadok 2017 a zmluva o rozdelení 1973) sú záväzné.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Toto je zjednodušené zhrnutie. Úplné dokumenty (domový poriadok 2017 a zmluva o rozdelení 1973) sú záväzné.</p>
 </div>
 
 <!-- HR: HUNGARIAN -->
@@ -770,7 +775,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Ezután: bírság <strong>€500-ig szabálysértésenként</strong> + esetleges kártérítés.</li>
 <li class="hl"><span>•</span>Ismétlődő súlyos zavarás a lakáshasználati jog elvesztéséhez vezethet.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ez egy egyszerűsített összefoglaló. A teljes dokumentumok (házirend 2017 és osztási okirat 1973) a mérvadóak.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Ez egy egyszerűsített összefoglaló. A teljes dokumentumok (házirend 2017 és osztási okirat 1973) a mérvadóak.</p>
 </div>
 
 <!-- HR: CROATIAN -->
@@ -812,7 +817,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Nakon toga: kazna do <strong>€500 po prekršaju</strong> + moguća naknada štete.</li>
 <li class="hl"><span>•</span>Ponovljene ozbiljne smetnje mogu dovesti do gubitka prava korištenja stana.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podjeli 1973) su mjerodavni.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podjeli 1973) su mjerodavni.</p>
 </div>
 
 <!-- HR: SERBIAN -->
@@ -854,7 +859,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Nakon toga: kazna do <strong>€500 po prekršaju</strong> + moguća naknada štete.</li>
 <li class="hl"><span>•</span>Ponovljene ozbiljne smetnje mogu dovesti do gubitka prava korišćenja stana.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podeli 1973) su merodavni.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Ovo je pojednostavljeni sažetak. Puni dokumenti (kućni red 2017 i ugovor o podeli 1973) su merodavni.</p>
 </div>
 
 <!-- HR: UKRAINIAN -->
@@ -896,7 +901,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Далі: штраф до <strong>€500 за порушення</strong> + можливе відшкодування збитків.</li>
 <li class="hl"><span>•</span>Повторні серйозні порушення можуть призвести до втрати права користування квартирою.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Це спрощений виклад. Повні документи (домовий порядок 2017 та акт поділу 1973) є офіційними.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Це спрощений виклад. Повні документи (домовий порядок 2017 та акт поділу 1973) є офіційними.</p>
 </div>
 
 <!-- HR: RUSSIAN -->
@@ -938,7 +943,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>Далее: штраф до <strong>€500 за нарушение</strong> + возможное возмещение ущерба.</li>
 <li class="hl"><span>•</span>Повторные серьёзные нарушения могут привести к лишению права пользования квартирой.</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">Это упрощённое изложение. Полные документы (домовой порядок 2017 и акт раздела 1973) являются официальными.</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">Это упрощённое изложение. Полные документы (домовой порядок 2017 и акт раздела 1973) являются официальными.</p>
 </div>
 
 <!-- HR: CHINESE -->
@@ -980,7 +985,7 @@ Vaši komšije to takođe ne žele.
 <li class="hl"><span>•</span>之后：每次违规罚款最高<strong>€500</strong> + 可能的损害赔偿。</li>
 <li class="hl"><span>•</span>反复严重违规可导致失去公寓使用权。</li></ul>
 </div>
-<p style="text-align:center;font-size:.8em;color:#999;margin-top:16px;border-top:1px solid #eee;padding-top:12px">这是简化摘要。完整文件（2017年房屋规则和1973年分割契约）具有法律效力。</p>
+<p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">这是简化摘要。完整文件（2017年房屋规则和1973年分割契约）具有法律效力。</p>
 </div>
 
 <div class="card docs">
@@ -1033,6 +1038,31 @@ function show(code) {
 
 var browserLang = (navigator.language || 'nl').split('-')[0].toLowerCase();
 show(browserLang);
+
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+function setTheme(dark) {
+  html.dataset.theme = dark ? 'dark' : '';
+  toggle.textContent = dark ? '☀️' : '🌙';
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+
+// Init: check saved preference, then OS preference
+const saved = localStorage.getItem('theme');
+if (saved) {
+  setTheme(saved === 'dark');
+} else {
+  setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+}
+
+toggle.onclick = () => setTheme(html.dataset.theme !== 'dark');
+
+// Listen for OS theme changes (if no manual override)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('theme')) setTheme(e.matches);
+});
 </script>
 </body>
 </html>
