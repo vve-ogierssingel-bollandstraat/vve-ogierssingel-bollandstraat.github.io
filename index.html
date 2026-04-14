@@ -25,13 +25,24 @@ body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--tex
 .lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
 .lang-nav button{border:1px solid var(--border);background:var(--btn-bg);color:var(--text);border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer;transition:all .2s}
 .lang-nav button.active{background:var(--btn-active-bg);color:var(--btn-active-text);border-color:var(--btn-active-bg)}
-.section,.hr-section{display:none}
-.section.active,.hr-section.active{display:block}
+.section,.hr-section,.ct-section{display:none}
+.section.active,.hr-section.active,.ct-section.active{display:block}
 .highlight{border-left:4px solid var(--accent)}
 .highlight h2{color:var(--accent);border-bottom-color:var(--accent)}
 .hl{padding:4px 0 4px 28px;position:relative}
 .hl::before{content:none !important}
 .hl span{position:absolute;left:0}
+.contact-card{border-left:4px solid var(--rule-line)}
+.ct-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.ct-row:last-child{border-bottom:none}
+.ct-icon{font-size:1.4em;flex-shrink:0;width:32px;text-align:center}
+.ct-info{flex:1;min-width:0}
+.ct-label{font-weight:bold;font-size:.95em}
+.ct-detail{font-size:.85em;color:var(--muted)}
+.ct-contact{font-size:.9em;margin-top:2px}
+.ct-contact a{color:var(--link);text-decoration:none}
+.ct-contact a:hover{text-decoration:underline}
+.ct-note{font-size:.8em;color:var(--muted);text-align:center;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:8px}
 .docs{text-align:center;padding:16px}
 .docs a{color:var(--link);text-decoration:none;font-weight:bold}
 footer{text-align:center;font-size:.75em;color:var(--footer);padding:16px 0}
@@ -989,6 +1000,204 @@ Vaši komšije to takođe ne žele.
 <p style="text-align:center;font-size:.8em;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:12px">这是简化摘要。完整文件（2017年房屋规则和1973年分割契约）具有法律效力。</p>
 </div>
 
+<!-- =============== CONTACT PER TAAL =============== -->
+
+<!-- CT: NEDERLANDS -->
+<div class="card contact-card ct-section" data-lang="nl">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Wie bel je waarvoor?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Noodgevallen</div><div class="ct-detail">Brand, inbraak, medisch noodgeval</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Politie (niet-spoed)</div><div class="ct-detail">Overlast, verdachte situatie, aangifte</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">VvE Bestuur</div><div class="ct-detail">Klachten, toestemming verbouwing, overlastmeldingen</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administratie, servicekosten, betalingen, portaal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (ma-vr 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Onderhoud &amp; storingen gebouw</div><div class="ct-detail">Intercom, verlichting, lekkage gemeenschappelijk, lift</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (kantooruren)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Spoed buiten kantooruren</div><div class="ct-detail">Lekkage, storing, urgente gebouwproblemen</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24 uur)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Waterleiding / gaslek</div><div class="ct-detail">Storingen water of gas in de wijk</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gas/elektra): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Gemeente Rotterdam</div><div class="ct-detail">Grofvuil, afvalcontainer, straatverlichting, openbare ruimte</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Gebruik bij voorkeur e-mail — dat wordt het snelst opgepakt.</div>
+</div>
+
+<!-- CT: ENGLISH -->
+<div class="card contact-card ct-section" data-lang="en">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Who to call for what?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Emergency</div><div class="ct-detail">Fire, break-in, medical emergency</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Police (non-emergency)</div><div class="ct-detail">Nuisance, suspicious situation, report</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">VvE Board</div><div class="ct-detail">Complaints, renovation permission, nuisance reports</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administration, service charges, payments, portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (Mon-Fri 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Maintenance &amp; building issues</div><div class="ct-detail">Intercom, lighting, shared area leaks, elevator</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (office hours)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Urgent — outside office hours</div><div class="ct-detail">Leaks, breakdowns, urgent building problems</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Water / gas emergency</div><div class="ct-detail">Water or gas supply issues in the area</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gas/electric): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Municipality of Rotterdam</div><div class="ct-detail">Bulky waste, bins, street lighting, public space</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Please use email when possible — it gets handled fastest.</div>
+</div>
+
+<!-- CT: GERMAN -->
+<div class="card contact-card ct-section" data-lang="de">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Wen rufen Sie an?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Notfall</div><div class="ct-detail">Brand, Einbruch, medizinischer Notfall</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Polizei (kein Notfall)</div><div class="ct-detail">Belästigung, verdächtige Situation, Anzeige</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">VvE Vorstand</div><div class="ct-detail">Beschwerden, Renovierungsgenehmigung, Belästigungsmeldungen</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Verwaltung, Nebenkosten, Zahlungen, Portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (Mo-Fr 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Wartung &amp; Gebäudestörungen</div><div class="ct-detail">Gegensprechanlage, Beleuchtung, Leckagen, Aufzug</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (Geschäftszeiten)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Dringend — außerhalb der Geschäftszeiten</div><div class="ct-detail">Leckagen, Störungen, dringende Gebäudeprobleme</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24 Std.)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Wasser- / Gasnotfall</div><div class="ct-detail">Störungen der Wasser- oder Gasversorgung</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (Gas/Strom): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Gemeinde Rotterdam</div><div class="ct-detail">Sperrmüll, Container, Straßenbeleuchtung</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Bitte nutzen Sie bevorzugt E-Mail — das wird am schnellsten bearbeitet.</div>
+</div>
+
+<!-- CT: POLISH -->
+<div class="card contact-card ct-section" data-lang="pl">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Do kogo dzwonić?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Nagły wypadek</div><div class="ct-detail">Pożar, włamanie, nagły wypadek medyczny</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Policja (nie nagłe)</div><div class="ct-detail">Uciążliwości, podejrzana sytuacja, zgłoszenie</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Zarząd VvE</div><div class="ct-detail">Skargi, pozwolenie na remont, zgłoszenia uciążliwości</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administracja, opłaty, płatności, portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (pn-pt 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Konserwacja i awarie budynku</div><div class="ct-detail">Domofon, oświetlenie, wycieki, winda</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (godziny pracy)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Pilne — poza godzinami pracy</div><div class="ct-detail">Wycieki, awarie, pilne problemy budynku</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Awaria wody / gazu</div><div class="ct-detail">Problemy z dostawą wody lub gazu</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gaz/prąd): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Gmina Rotterdam</div><div class="ct-detail">Odpady wielkogabarytowe, kontenery, oświetlenie uliczne</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">W miarę możliwości korzystaj z e-maila — to najszybsza droga kontaktu.</div>
+</div>
+
+<!-- CT: ROMANIAN -->
+<div class="card contact-card ct-section" data-lang="ro">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Pe cine suni?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Urgență</div><div class="ct-detail">Incendiu, efracție, urgență medicală</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Poliția (non-urgență)</div><div class="ct-detail">Deranj, situație suspectă, plângere</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Consiliul VvE</div><div class="ct-detail">Plângeri, permis renovare, raportare deranj</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administrație, cheltuieli, plăți, portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (lu-vi 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Întreținere și defecțiuni</div><div class="ct-detail">Interfon, iluminat, scurgeri, lift</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (program lucru)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Urgent — în afara programului</div><div class="ct-detail">Scurgeri, avarii, probleme urgente</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Urgență apă / gaz</div><div class="ct-detail">Probleme cu alimentarea cu apă sau gaz</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gaz/electric): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Primăria Rotterdam</div><div class="ct-detail">Deșeuri voluminoase, containere, iluminat stradal</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Folosiți e-mailul pe cât posibil — este cel mai rapid.</div>
+</div>
+
+<!-- CT: BULGARIAN -->
+<div class="card contact-card ct-section" data-lang="bg">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 На кого да се обадите?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Спешен случай</div><div class="ct-detail">Пожар, взлом, медицинска спешност</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Полиция (неспешно)</div><div class="ct-detail">Нарушения, подозрителна ситуация</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Управа на VvE</div><div class="ct-detail">Оплаквания, разрешение за ремонт, сигнали</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Администрация, такси, плащания, портал</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (пн-пт 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Поддръжка и аварии</div><div class="ct-detail">Домофон, осветление, течове, асансьор</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (работно време)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Спешно — извън работно време</div><div class="ct-detail">Течове, аварии, спешни проблеми</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24ч)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Авария вода / газ</div><div class="ct-detail">Проблеми с водо- или газоснабдяване</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (газ/ток): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Община Ротердам</div><div class="ct-detail">Едрогабаритни отпадъци, контейнери, улично осветление</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Използвайте е-мейл когато е възможно — обработва се най-бързо.</div>
+</div>
+
+<!-- CT: CZECH -->
+<div class="card contact-card ct-section" data-lang="cs">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Komu zavolat?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Tísňové volání</div><div class="ct-detail">Požár, vloupání, zdravotní nouze</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Policie (netísňové)</div><div class="ct-detail">Obtěžování, podezřelá situace, oznámení</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Představenstvo VvE</div><div class="ct-detail">Stížnosti, povolení rekonstrukce, hlášení</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administrativa, poplatky, platby, portál</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (po-pá 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Údržba a poruchy</div><div class="ct-detail">Domácí telefon, osvětlení, úniky, výtah</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (pracovní doba)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Naléhavé — mimo pracovní dobu</div><div class="ct-detail">Úniky, poruchy, naléhavé problémy</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Havárie vody / plynu</div><div class="ct-detail">Problémy s dodávkou vody nebo plynu</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (plyn/elektřina): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Město Rotterdam</div><div class="ct-detail">Objemný odpad, kontejnery, pouliční osvětlení</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Pokud možno používejte e-mail — vyřizuje se nejrychleji.</div>
+</div>
+
+<!-- CT: SLOVAK -->
+<div class="card contact-card ct-section" data-lang="sk">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Komu zavolať?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Tiesňové volanie</div><div class="ct-detail">Požiar, vlámanie, zdravotná núdza</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Polícia (netiesňové)</div><div class="ct-detail">Obťažovanie, podozrivá situácia, oznámenie</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Predstavenstvo VvE</div><div class="ct-detail">Sťažnosti, povolenie rekonštrukcie, hlásenia</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administratíva, poplatky, platby, portál</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (po-pi 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Údržba a poruchy</div><div class="ct-detail">Domáci telefón, osvetlenie, úniky, výťah</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (pracovná doba)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Naliehavé — mimo pracovnej doby</div><div class="ct-detail">Úniky, poruchy, naliehavé problémy</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Havária vody / plynu</div><div class="ct-detail">Problémy s dodávkou vody alebo plynu</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (plyn/elektrina): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Mesto Rotterdam</div><div class="ct-detail">Objemný odpad, kontajnery, pouličné osvetlenie</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Ak je to možné, používajte e-mail — vybavuje sa najrýchlejšie.</div>
+</div>
+
+<!-- CT: HUNGARIAN -->
+<div class="card contact-card ct-section" data-lang="hu">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Kit hívjon?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Vészhelyzet</div><div class="ct-detail">Tűz, betörés, egészségügyi vészhelyzet</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Rendőrség (nem sürgős)</div><div class="ct-detail">Zavarás, gyanús helyzet, bejelentés</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">VvE Igazgatótanács</div><div class="ct-detail">Panaszok, felújítási engedély, zavarásjelentések</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Adminisztráció, díjak, fizetések, portál</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (hé-pé 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Karbantartás és hibák</div><div class="ct-detail">Kaputelefon, világítás, szivárgás, lift</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (munkaidőben)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Sürgős — munkaidőn kívül</div><div class="ct-detail">Szivárgás, meghibásodás, sürgős problémák</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24 óra)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Víz- / gázvészhelyzet</div><div class="ct-detail">Víz- vagy gázellátási problémák</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gáz/áram): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Rotterdam város</div><div class="ct-detail">Lomtalanítás, konténerek, közvilágítás</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Lehetőleg e-mailt használjon — az a leggyorsabb.</div>
+</div>
+
+<!-- CT: CROATIAN -->
+<div class="card contact-card ct-section" data-lang="hr">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Koga nazvati?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Hitna pomoć</div><div class="ct-detail">Požar, provala, medicinska hitnost</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Policija (nije hitno)</div><div class="ct-detail">Smetnje, sumnjiva situacija, prijava</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Uprava VvE</div><div class="ct-detail">Pritužbe, dozvola za renoviranje, prijave smetnji</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administracija, troškovi, plaćanja, portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (pon-pet 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Održavanje i kvarovi</div><div class="ct-detail">Interfon, rasvjeta, curenje, dizalo</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (radno vrijeme)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Hitno — izvan radnog vremena</div><div class="ct-detail">Curenje, kvarovi, hitni problemi</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Hitna voda / plin</div><div class="ct-detail">Problemi s vodoopskrbom ili plinom</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (plin/struja): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Grad Rotterdam</div><div class="ct-detail">Glomazni otpad, kontejneri, ulična rasvjeta</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Koristite e-mail kad je moguće — najbrže se obrađuje.</div>
+</div>
+
+<!-- CT: SERBIAN -->
+<div class="card contact-card ct-section" data-lang="sr">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Koga pozvati?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Hitna pomoć</div><div class="ct-detail">Požar, provala, medicinska hitnost</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Policija (nije hitno)</div><div class="ct-detail">Smetnje, sumnjiva situacija, prijava</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Uprava VvE</div><div class="ct-detail">Pritužbe, dozvola za renoviranje, prijave smetnji</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Administracija, troškovi, plaćanja, portal</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (pon-pet 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Održavanje i kvarovi</div><div class="ct-detail">Interfon, osvetljenje, curenje, lift</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (radno vreme)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Hitno — van radnog vremena</div><div class="ct-detail">Curenje, kvarovi, hitni problemi</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24h)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Hitna voda / gas</div><div class="ct-detail">Problemi sa vodosnabdevanjem ili gasom</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (gas/struja): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Grad Roterdam</div><div class="ct-detail">Kabasti otpad, kontejneri, ulično osvetljenje</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">Koristite e-mail kad je moguće — najbrže se obrađuje.</div>
+</div>
+
+<!-- CT: UKRAINIAN -->
+<div class="card contact-card ct-section" data-lang="uk">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Кому дзвонити?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Екстрена допомога</div><div class="ct-detail">Пожежа, зламування, медична невідкладність</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Поліція (не терміново)</div><div class="ct-detail">Порушення, підозріла ситуація, заява</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Правління VvE</div><div class="ct-detail">Скарги, дозвіл на ремонт, повідомлення про порушення</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Адміністрація, платежі, портал</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (пн-пт 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Обслуговування та аварії</div><div class="ct-detail">Домофон, освітлення, протікання, ліфт</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (робочий час)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Терміново — поза робочим часом</div><div class="ct-detail">Протікання, аварії, термінові проблеми</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24 год)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Аварія води / газу</div><div class="ct-detail">Проблеми з водо- або газопостачанням</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (газ/електрика): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Муніципалітет Роттердам</div><div class="ct-detail">Великогабаритне сміття, контейнери, вуличне освітлення</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">За можливості використовуйте е-мейл — це найшвидше.</div>
+</div>
+
+<!-- CT: RUSSIAN -->
+<div class="card contact-card ct-section" data-lang="ru">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 Кому звонить?</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Экстренная помощь</div><div class="ct-detail">Пожар, взлом, медицинская экстренность</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">Полиция (не срочно)</div><div class="ct-detail">Нарушения, подозрительная ситуация, заявление</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">Правление VvE</div><div class="ct-detail">Жалобы, разрешение на ремонт, сообщения о нарушениях</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">Администрация, платежи, портал</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a> (пн-пт 10:00-15:00)<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">Обслуживание и аварии</div><div class="ct-detail">Домофон, освещение, протечки, лифт</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a> (рабочее время)<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">Срочно — вне рабочего времени</div><div class="ct-detail">Протечки, аварии, срочные проблемы</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a> (24 ч)</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">Авария воды / газа</div><div class="ct-detail">Проблемы с водо- или газоснабжением</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin (газ/электричество): <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">Муниципалитет Роттердам</div><div class="ct-detail">Крупногабаритный мусор, контейнеры, уличное освещение</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">По возможности используйте е-мейл — это быстрее всего.</div>
+</div>
+
+<!-- CT: CHINESE -->
+<div class="card contact-card ct-section" data-lang="zh">
+<h2 style="text-align:center;font-size:1.3em;margin-bottom:16px">📞 联系谁？</h2>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">紧急情况</div><div class="ct-detail">火灾、入室盗窃、医疗紧急情况</div><div class="ct-contact"><a href="tel:112">112</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">👮</div><div class="ct-info"><div class="ct-label">警察（非紧急）</div><div class="ct-detail">骚扰、可疑情况、报案</div><div class="ct-contact"><a href="tel:0900-8844">0900-8844</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🏢</div><div class="ct-info"><div class="ct-label">VvE管理委员会</div><div class="ct-detail">投诉、装修许可、骚扰举报</div><div class="ct-contact"><a href="mailto:vve.3076cbt@gmail.com">vve.3076cbt@gmail.com</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">📋</div><div class="ct-info"><div class="ct-label">VVE Beheer B.V. — VvE nr: D7465</div><div class="ct-detail">行政管理、费用、付款、门户网站</div><div class="ct-contact"><a href="tel:070-3905051">070 390 50 51</a>（周一至周五 10:00-15:00）<br><a href="mailto:vve@vve-beheer.nl">vve@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🔧</div><div class="ct-info"><div class="ct-label">维修与故障</div><div class="ct-detail">对讲机、照明、漏水、电梯</div><div class="ct-contact"><a href="tel:070-3952700">070 395 27 00</a>（工作时间）<br><a href="mailto:onderhoud@vve-beheer.nl">onderhoud@vve-beheer.nl</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🚨</div><div class="ct-info"><div class="ct-label">紧急——工作时间外</div><div class="ct-detail">漏水、故障、紧急建筑问题</div><div class="ct-contact"><a href="tel:070-3993142">070 399 31 42</a>（24小时）</div></div></div>
+<div class="ct-row"><div class="ct-icon">🚰</div><div class="ct-info"><div class="ct-label">水/燃气紧急情况</div><div class="ct-detail">供水或供气问题</div><div class="ct-contact">Evides: <a href="tel:0900-0787">0900-0787</a><br>Stedin（燃气/电力）: <a href="tel:0800-9009">0800-9009</a></div></div></div>
+<div class="ct-row"><div class="ct-icon">🗑️</div><div class="ct-info"><div class="ct-label">鹿特丹市政府</div><div class="ct-detail">大件垃圾、垃圾桶、路灯</div><div class="ct-contact"><a href="tel:14010">14 010</a></div></div></div>
+<div class="ct-note">尽量使用电子邮件联系——处理速度最快。</div>
+</div>
+
 <div class="card docs">
 <a href="verduurzaming.html">📄 Verduurzamingsplan VvE (NL)</a>
 </div>
@@ -1025,15 +1234,16 @@ langs.forEach(l => {
 });
 
 function show(code) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.hr-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.section,.hr-section,.ct-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
   var el = document.querySelector('.section[data-lang="'+code+'"]');
   var hr = document.querySelector('.hr-section[data-lang="'+code+'"]');
+  var ct = document.querySelector('.ct-section[data-lang="'+code+'"]');
   var btn = nav.querySelector('[data-lang="'+code+'"]');
-  if (!el) { code='nl'; el = document.querySelector('.section[data-lang="nl"]'); hr = document.querySelector('.hr-section[data-lang="nl"]'); btn = nav.querySelector('[data-lang="nl"]'); }
+  if (!el) { code='nl'; el = document.querySelector('.section[data-lang="nl"]'); hr = document.querySelector('.hr-section[data-lang="nl"]'); ct = document.querySelector('.ct-section[data-lang="nl"]'); btn = nav.querySelector('[data-lang="nl"]'); }
   el.classList.add('active');
   if (hr) hr.classList.add('active');
+  if (ct) ct.classList.add('active');
   if (btn) btn.classList.add('active');
 }
 
