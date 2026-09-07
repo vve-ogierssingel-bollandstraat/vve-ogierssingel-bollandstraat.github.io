@@ -1,0 +1,119 @@
+/* Universele layout. Bron is de gebouwregelpagina; alle pagina's gebruiken dit. */
+
+:root{--bg:#f7f7f7;--text:#111;--card:#fff;--card-shadow:rgba(0,0,0,.1);--border:#ccc;--btn-bg:#fff;--btn-active-bg:#111;--btn-active-text:#fff;--warn:#666;--line:#eee;--link:#1a73e8;--accent:#1a73e8;--rule-line:#e00;--footer:#999;--muted:#666;--notice:#eef4fc;--danger:#a51d25;--field:#fff}
+[data-theme="dark"]{--bg:#1a1a2e;--text:#e0e0e0;--card:#16213e;--card-shadow:rgba(0,0,0,.4);--border:#334;--btn-bg:#1a1a2e;--btn-active-bg:#e94560;--btn-active-text:#fff;--warn:#999;--line:#334;--link:#4fc3f7;--accent:#4fc3f7;--rule-line:#e94560;--footer:#777;--muted:#aaa;--notice:#202f4a;--danger:#ffacb2;--field:#1a1a2e}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:16px;transition:background .3s,color .3s}
+.wrap{max-width:640px;margin:0 auto}
+.card{background:var(--card);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px var(--card-shadow);transition:background .3s}
+[hidden]{display:none!important}
+
+/* Gebouwregels */
+.mirror{font-size:1.15em;font-weight:bold;text-align:center;padding:32px 24px}
+.mirror .q{font-size:1.3em;margin-bottom:12px}
+.rules{padding:16px 24px}
+.rules h2{font-size:1.1em;margin-bottom:8px;border-bottom:2px solid var(--rule-line);padding-bottom:4px}
+.rules ul{list-style:none;padding:0;margin:8px 0 16px}
+.rules li{padding:4px 0 4px 28px;position:relative}
+.rules li::before{content:"🚫";position:absolute;left:0;top:4px;font-size:.9em}
+.quiet li::before{content:"🤫"}
+.areas li::before{content:"📍"}
+.warn{font-size:.9em;color:var(--warn);text-align:center;padding:12px;border-top:1px solid var(--line);margin-top:8px}
+.icons{display:flex;justify-content:center;gap:16px;font-size:2em;padding:8px 0 16px;flex-wrap:wrap}
+.highlight{border-left:4px solid var(--accent)}
+.highlight h2{color:var(--accent);border-bottom-color:var(--accent)}
+.hl{padding:4px 0 4px 28px;position:relative}
+.hl::before{content:none !important}
+.hl span{position:absolute;left:0}
+
+/* Taalkeuze en secties */
+.lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
+.lang-nav button{border:1px solid var(--border);background:var(--btn-bg);color:var(--text);border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer;transition:all .2s;font-family:inherit}
+.lang-nav button.active,.lang-nav button[aria-pressed="true"]{background:var(--btn-active-bg);color:var(--btn-active-text);border-color:var(--btn-active-bg)}
+.section,.hr-section,.ct-section{display:none}
+.section.active,.hr-section.active,.ct-section.active{display:block}
+
+/* Contactkaart */
+.contact-card{border-left:4px solid var(--rule-line)}
+.ct-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.ct-row:last-child{border-bottom:none}
+.ct-icon{font-size:1.4em;flex-shrink:0;width:32px;text-align:center}
+.ct-info{flex:1;min-width:0}
+.ct-label{font-weight:bold;font-size:.95em}
+.ct-detail{font-size:.85em;color:var(--muted)}
+.ct-contact{font-size:.9em;margin-top:2px}
+.ct-contact a{color:var(--link);text-decoration:none}
+.ct-contact a:hover{text-decoration:underline}
+.ct-note{font-size:.8em;color:var(--muted);text-align:center;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:8px}
+
+/* Doorverwijzingen: melding doen en eigenareninformatie naast elkaar */
+.docs{text-align:center;padding:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.docs a{color:var(--link);text-decoration:none;font-weight:bold;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border:2px solid currentColor;border-radius:8px;flex:1 1 220px;transition:all .2s}
+.docs a:hover{background:var(--link);color:var(--card)}
+
+footer{text-align:center;font-size:.75em;color:var(--footer);padding:16px 0}
+.theme-toggle{position:fixed;top:12px;right:12px;background:var(--card);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;font-size:1.3em;cursor:pointer;box-shadow:0 2px 6px var(--card-shadow);z-index:100;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.theme-toggle:hover{transform:scale(1.1)}
+
+/* Tekstpagina's: eigenaren en melden */
+h1{font-size:1.5em;line-height:1.3;margin:0 0 12px}
+h2,legend{font-size:1.15em;line-height:1.4;font-weight:bold}
+h2{margin:0 0 12px}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+a{color:var(--link);text-underline-offset:3px}
+nav{display:flex;gap:12px 20px;flex-wrap:wrap;margin-bottom:16px;justify-content:center}
+nav a[aria-current]{font-weight:bold}
+ul{padding-left:22px}
+li{margin:6px 0}
+.muted,small{color:var(--muted);font-size:.9em}
+.status{font-size:.85em;font-weight:bold;display:block;margin-bottom:8px;color:var(--muted)}
+.notice{background:var(--notice);border-left:4px solid var(--accent);padding:14px 16px;margin:14px 0}
+.error{color:var(--danger);font-weight:bold}
+.help{display:block;font-size:.9em;color:var(--muted);margin:6px 0 0}
+.contact{overflow-wrap:anywhere}
+.language-notice{font-size:.9em;padding:12px 16px;margin:12px 0 0}
+.owner-facts{width:100%;border-collapse:collapse;margin:12px 0;table-layout:fixed}
+.owner-facts th,.owner-facts td{border-bottom:1px solid var(--line);padding:10px 12px 10px 0;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.owner-facts th{width:42%;font-weight:bold}
+.owner-facts tr:last-child th,.owner-facts tr:last-child td{border-bottom:none}
+details{margin:14px 0}
+summary{cursor:pointer;font-weight:bold}
+
+/* Formulier */
+button,input,select,textarea{font:inherit;font-family:inherit}
+.button,button[type=submit]{cursor:pointer;min-height:44px;border:1px solid var(--accent);border-radius:8px;padding:10px 18px;background:var(--accent);color:#fff;font-weight:bold;text-decoration:none;display:inline-block}
+button[type=submit]:disabled{opacity:.55;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+fieldset{border:0;padding:0;margin:0 0 24px;min-width:0}
+legend{padding:0 0 12px}
+label{display:block;font-weight:bold;margin-bottom:6px}
+input:not([type=checkbox]),select,textarea{width:100%;min-height:44px;border:1px solid var(--border);border-radius:8px;padding:10px;background:var(--field);color:var(--text)}
+input[type=file]{font-size:.9em;padding:9px}
+textarea{resize:vertical;min-height:140px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:18px}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:normal;cursor:pointer;margin-bottom:4px}
+.check input{width:20px;height:20px;flex-shrink:0;margin-top:3px}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.receipt{font-size:1.25em;word-break:break-all;display:block;padding:16px;border:1px solid var(--border);border-radius:8px;margin:16px 0}
+.linklike{background:none;border:0;color:var(--link);text-decoration:underline;text-underline-offset:3px;padding:4px 0;min-height:0;font-weight:normal;font-size:.9em;cursor:pointer;display:inline-block}
+@supports selector(::-webkit-calendar-picker-indicator){
+input[type=date]::-webkit-calendar-picker-indicator,input[type=time]::-webkit-calendar-picker-indicator{width:24px;height:24px;padding:6px;margin:0;cursor:pointer}}
+
+/* Hulpdialoog bij het tagnummer */
+dialog{max-width:min(600px,92vw);border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);padding:24px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:14px 0}
+dialog h2{margin-top:0}
+
+@media(max-width:540px){
+.grid{grid-template-columns:1fr}
+.card{padding:20px}
+body{padding:12px}
+h1{font-size:1.3em}
+.owner-facts th{width:38%}
+.owner-facts th,.owner-facts td{font-size:.95em;padding:8px 8px 8px 0}
+.docs a{flex:1 1 100%}
+}

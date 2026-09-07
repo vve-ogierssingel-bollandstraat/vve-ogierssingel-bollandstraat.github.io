@@ -8,14 +8,17 @@
 <meta name="description" content="Vertrouwelijk een klacht, overlast, schade of technisch probleem melden bij de VvE met uw toegangstagnummer.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self'; frame-src https://challenges.cloudflare.com; connect-src https://vve-meldingen.vve-ogierssingel.workers.dev; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Vertrouwelijk melden – VvE Ogierssingel / Bollandstraat</title>
-<link rel="stylesheet" href="assets/portaal.css">
+
 <script src="assets/melding-config.js" defer></script>
 <script src="assets/melden.js" defer></script>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/theme.js"></script>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
 <main class="wrap">
 <nav aria-label="Navigatie"><a href="index.html" data-i18n="navRules">Gebouwregels</a><a href="eigenaren.html" data-i18n="navUpdates">Updates voor eigenaren</a><a href="melden.html" aria-current="page" data-i18n="navReport">Melding doen</a></nav>
-<div class="languages" aria-label="Language"><button type="button" data-language="nl" aria-pressed="true">Nederlands</button><button type="button" data-language="en" aria-pressed="false">English</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div>
+<div class="lang-nav" aria-label="Language"><button type="button" data-language="nl" aria-pressed="true">Nederlands</button><button type="button" data-language="en" aria-pressed="false">English</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div>
 <section class="card">
 <h1 data-i18n="title">Vertrouwelijk melden bij de VvE</h1>
 <p data-i18n="intro">U hoeft uw naam of adres niet in te vullen. Gebruik het nummer van een aan uw appartement uitgegeven toegangstag. Alleen bevoegde bestuursleden en de VvE-manager mogen dit nummer via de tagadministratie aan een appartement koppelen. Uw identiteit wordt niet zonder noodzaak aan andere bewoners bekendgemaakt.</p>

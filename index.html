@@ -4,52 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gebouwregels - Building Rules</title>
-<style>
-:root{--bg:#f7f7f7;--text:#111;--card:#fff;--card-shadow:rgba(0,0,0,.1);--border:#ccc;--btn-bg:#fff;--btn-active-bg:#111;--btn-active-text:#fff;--warn:#666;--line:#eee;--link:#1a73e8;--accent:#1a73e8;--rule-line:#e00;--footer:#999;--muted:#666}
-[data-theme="dark"]{--bg:#1a1a2e;--text:#e0e0e0;--card:#16213e;--card-shadow:rgba(0,0,0,.4);--border:#334;--btn-bg:#1a1a2e;--btn-active-bg:#e94560;--btn-active-text:#fff;--warn:#999;--line:#334;--link:#4fc3f7;--accent:#4fc3f7;--rule-line:#e94560;--footer:#777;--muted:#aaa}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:16px;transition:background .3s,color .3s}
-.wrap{max-width:640px;margin:0 auto}
-.card{background:var(--card);border-radius:12px;padding:24px;margin-bottom:16px;box-shadow:0 1px 3px var(--card-shadow);transition:background .3s}
-.mirror{font-size:1.15em;font-weight:bold;text-align:center;padding:32px 24px}
-.mirror .q{font-size:1.3em;margin-bottom:12px}
-.rules{padding:16px 24px}
-.rules h2{font-size:1.1em;margin-bottom:8px;border-bottom:2px solid var(--rule-line);padding-bottom:4px}
-.rules ul{list-style:none;padding:0;margin:8px 0 16px}
-.rules li{padding:4px 0 4px 28px;position:relative}
-.rules li::before{content:"🚫";position:absolute;left:0;top:4px;font-size:.9em}
-.quiet li::before{content:"🤫"}
-.areas li::before{content:"📍"}
-.warn{font-size:.9em;color:var(--warn);text-align:center;padding:12px;border-top:1px solid var(--line);margin-top:8px}
-.icons{display:flex;justify-content:center;gap:16px;font-size:2em;padding:8px 0 16px;flex-wrap:wrap}
-.lang-nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0 16px}
-.lang-nav button{border:1px solid var(--border);background:var(--btn-bg);color:var(--text);border-radius:6px;padding:4px 10px;font-size:.85em;cursor:pointer;transition:all .2s}
-.lang-nav button.active{background:var(--btn-active-bg);color:var(--btn-active-text);border-color:var(--btn-active-bg)}
-.section,.hr-section,.ct-section{display:none}
-.section.active,.hr-section.active,.ct-section.active{display:block}
-.highlight{border-left:4px solid var(--accent)}
-.highlight h2{color:var(--accent);border-bottom-color:var(--accent)}
-.hl{padding:4px 0 4px 28px;position:relative}
-.hl::before{content:none !important}
-.hl span{position:absolute;left:0}
-.contact-card{border-left:4px solid var(--rule-line)}
-.ct-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-.ct-row:last-child{border-bottom:none}
-.ct-icon{font-size:1.4em;flex-shrink:0;width:32px;text-align:center}
-.ct-info{flex:1;min-width:0}
-.ct-label{font-weight:bold;font-size:.95em}
-.ct-detail{font-size:.85em;color:var(--muted)}
-.ct-contact{font-size:.9em;margin-top:2px}
-.ct-contact a{color:var(--link);text-decoration:none}
-.ct-contact a:hover{text-decoration:underline}
-.ct-note{font-size:.8em;color:var(--muted);text-align:center;padding:12px 0 4px;border-top:1px solid var(--line);margin-top:8px}
-.docs{text-align:center;padding:16px}
-.docs a{color:var(--link);text-decoration:none;font-weight:bold}
-footer{text-align:center;font-size:.75em;color:var(--footer);padding:16px 0}
-.theme-toggle{position:fixed;top:12px;right:12px;background:var(--card);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;font-size:1.3em;cursor:pointer;box-shadow:0 2px 6px var(--card-shadow);z-index:100;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.theme-toggle:hover{transform:scale(1.1)}
-.complaint-button{display:inline-block;min-height:44px;padding:10px 18px;border:2px solid currentColor;border-radius:6px;font-size:1rem}
-</style>
+<link rel="stylesheet" href="assets/site.css">
+<script src="assets/theme.js"></script>
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
@@ -60,9 +16,13 @@ footer{text-align:center;font-size:.75em;color:var(--footer);padding:16px 0}
 <div class="lang-nav" id="langNav"></div>
 </div>
 
+<div class="card docs">
+<a href="melden.html?lang=nl" id="linkReport">📮 <span>Klacht of melding doen</span></a>
+<a href="eigenaren.html?lang=nl" id="linkOwners">📋 <span>Informatie voor eigenaren</span></a>
+</div>
+
 <!-- NEDERLANDS -->
 <div class="section" data-lang="nl">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=nl">Klacht of melding doen</a></div>
 <div class="card mirror">
 <div class="q">Waarom doe je dit buiten en niet binnen?</div>
 Omdat rook, stank, lawaai en overlast ook in jouw kamer niet prettig zijn.<br>
@@ -92,7 +52,6 @@ Je buren willen het ook niet.
 
 <!-- ENGLISH -->
 <div class="section" data-lang="en">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Report an issue</a></div>
 <div class="card mirror">
 <div class="q">Why do you do this outside and not inside?</div>
 Because smoke, smell, noise and nuisance are not pleasant in your room.<br>
@@ -122,7 +81,6 @@ Your neighbors do not want it either.
 
 <!-- GERMAN -->
 <div class="section" data-lang="de">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Problem melden</a></div>
 <div class="card mirror">
 <div class="q">Warum tun Sie das draußen und nicht drinnen?</div>
 Weil Rauch, Geruch, Lärm und Belästigung auch in Ihrem Zimmer unangenehm sind.<br>
@@ -152,7 +110,6 @@ Ihre Nachbarn wollen das auch nicht.
 
 <!-- POLISH -->
 <div class="section" data-lang="pl">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Zgłoś problem</a></div>
 <div class="card mirror">
 <div class="q">Dlaczego robisz to na zewnątrz, a nie w środku?</div>
 Bo dym, zapach, hałas i uciążliwości są nieprzyjemne także w twoim pokoju.<br>
@@ -177,7 +134,6 @@ Twoi sąsiedzi też tego nie chcą.
 
 <!-- ROMANIAN -->
 <div class="section" data-lang="ro">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Raportează o problemă</a></div>
 <div class="card mirror">
 <div class="q">De ce faci asta afară și nu înăuntru?</div>
 Pentru că fumul, mirosul, zgomotul și deranjul nu sunt plăcute nici în camera ta.<br>
@@ -202,7 +158,6 @@ Vecinii tăi nu vor asta nici ei.
 
 <!-- BULGARIAN -->
 <div class="section" data-lang="bg">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Подайте сигнал</a></div>
 <div class="card mirror">
 <div class="q">Защо правиш това навън, а не вътре?</div>
 Защото дим, миризма, шум и неудобства не са приятни и в твоята стая.<br>
@@ -227,7 +182,6 @@ Vecinii tăi nu vor asta nici ei.
 
 <!-- CZECH -->
 <div class="section" data-lang="cs">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Nahlásit problém</a></div>
 <div class="card mirror">
 <div class="q">Proč to děláte venku a ne uvnitř?</div>
 Protože kouř, zápach, hluk a obtěžování nejsou příjemné ani ve vašem pokoji.<br>
@@ -252,7 +206,6 @@ Vaši sousedé to také nechtějí.
 
 <!-- SLOVAK -->
 <div class="section" data-lang="sk">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Nahlásiť problém</a></div>
 <div class="card mirror">
 <div class="q">Prečo to robíte vonku a nie vnútri?</div>
 Pretože dym, zápach, hluk a obťažovanie nie sú príjemné ani vo vašej izbe.<br>
@@ -277,7 +230,6 @@ Vaši susedia to tiež nechcú.
 
 <!-- HUNGARIAN -->
 <div class="section" data-lang="hu">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Probléma bejelentése</a></div>
 <div class="card mirror">
 <div class="q">Miért csinálod ezt kint és nem bent?</div>
 Mert a füst, a szag, a zaj és a zavarás a te szobádban sem kellemes.<br>
@@ -302,7 +254,6 @@ A szomszédaid sem akarják ezt.
 
 <!-- CROATIAN -->
 <div class="section" data-lang="hr">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Prijavite problem</a></div>
 <div class="card mirror">
 <div class="q">Zašto to radite vani, a ne unutra?</div>
 Jer dim, miris, buka i smetnje nisu ugodni ni u vašoj sobi.<br>
@@ -327,7 +278,6 @@ Vaši susjedi to također ne žele.
 
 <!-- SERBIAN -->
 <div class="section" data-lang="sr">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Prijavite problem</a></div>
 <div class="card mirror">
 <div class="q">Zašto to radite napolju, a ne unutra?</div>
 Jer dim, miris, buka i smetnje nisu prijatni ni u vašoj sobi.<br>
@@ -352,7 +302,6 @@ Vaši komšije to takođe ne žele.
 
 <!-- UKRAINIAN -->
 <div class="section" data-lang="uk">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Повідомити про проблему</a></div>
 <div class="card mirror">
 <div class="q">Чому ви робите це надворі, а не всередині?</div>
 Бо дим, запах, шум і незручності неприємні і у вашій кімнаті.<br>
@@ -377,7 +326,6 @@ Vaši komšije to takođe ne žele.
 
 <!-- RUSSIAN -->
 <div class="section" data-lang="ru">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=en">Сообщить о проблеме</a></div>
 <div class="card mirror">
 <div class="q">Почему вы делаете это снаружи, а не внутри?</div>
 Потому что дым, запах, шум и неудобства неприятны и в вашей комнате.<br>
@@ -402,7 +350,6 @@ Vaši komšije to takođe ne žele.
 
 <!-- CHINESE -->
 <div class="section" data-lang="zh">
-<div class="card docs"><a class="complaint-button" href="melden.html?lang=zh">提交报告</a></div>
 <div class="card mirror">
 <div class="q">为什么你在外面做这些而不是在里面？</div>
 因为烟味、气味、噪音和干扰在你的房间里也不舒服。<br>
@@ -1213,10 +1160,6 @@ Vaši komšije to takođe ne žele.
 <div class="ct-note">尽量使用电子邮件联系——处理速度最快。</div>
 </div>
 
-<div class="card docs">
-<a href="eigenaren.html">📋 Informatie voor eigenaren (NL)</a>
-</div>
-
 <footer>VvE Ogierssingel 263/301 – Bollandstraat 29/35, Rotterdam</footer>
 
 </div>
@@ -1239,6 +1182,23 @@ const langs = [
   {code:'zh',label:'中文'}
 ];
 
+const links = {
+  nl:['Klacht of melding doen','Informatie voor eigenaren'],
+  en:['Report an issue','Owner information'],
+  de:['Problem melden','Informationen für Eigentümer'],
+  pl:['Zgłoś problem','Informacje dla właścicieli'],
+  ro:['Raportează o problemă','Informații pentru proprietari'],
+  bg:['Подайте сигнал','Информация за собствениците'],
+  cs:['Nahlásit problém','Informace pro vlastníky'],
+  sk:['Nahlásiť problém','Informácie pre vlastníkov'],
+  hu:['Probléma bejelentése','Tulajdonosi tájékoztató'],
+  hr:['Prijavite problem','Informacije za vlasnike'],
+  sr:['Prijavite problem','Informacije za vlasnike'],
+  uk:['Повідомити про проблему','Інформація для власників'],
+  ru:['Сообщить о проблеме','Информация для собственников'],
+  zh:['提交报告','业主信息']
+};
+
 const nav = document.getElementById('langNav');
 langs.forEach(l => {
   const btn = document.createElement('button');
@@ -1260,35 +1220,20 @@ function show(code) {
   if (hr) hr.classList.add('active');
   if (ct) ct.classList.add('active');
   if (btn) btn.classList.add('active');
+
+  var pair = links[code] || links.nl;
+  var formLang = ['nl','en','zh'].indexOf(code) === -1 ? 'en' : code;
+  var report = document.getElementById('linkReport');
+  var owners = document.getElementById('linkOwners');
+  report.href = 'melden.html?lang=' + formLang;
+  report.querySelector('span').textContent = pair[0];
+  owners.href = 'eigenaren.html?lang=' + code;
+  owners.querySelector('span').textContent = pair[1];
 }
 
 var browserLang = (navigator.language || 'nl').split('-')[0].toLowerCase();
 show(browserLang);
 
-// Theme toggle
-const toggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-
-function setTheme(dark) {
-  html.dataset.theme = dark ? 'dark' : '';
-  toggle.textContent = dark ? '☀️' : '🌙';
-  localStorage.setItem('theme', dark ? 'dark' : 'light');
-}
-
-// Init: check saved preference, then OS preference
-const saved = localStorage.getItem('theme');
-if (saved) {
-  setTheme(saved === 'dark');
-} else {
-  setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
-}
-
-toggle.onclick = () => setTheme(html.dataset.theme !== 'dark');
-
-// Listen for OS theme changes (if no manual override)
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (!localStorage.getItem('theme')) setTheme(e.matches);
-});
 </script>
 </body>
 </html>
