@@ -3,6 +3,8 @@
 const MAX_FILE = 2 * 1024 * 1024;
 const MAX_REQUEST = 3 * MAX_FILE + 64 * 1024;
 const encoder = new TextEncoder();
+// Nuisance duration. "" stays valid: non-nuisance categories send no duration.
+const DURATIONS = ["","tot15min","15-60min","1-3uur","3-6uur","6-12uur","meer12uur","doorlopend","nog-bezig"];
 class ClientError extends Error { constructor(status, code) {super(code);this.status = status;} }
 const bad = () => {throw new ClientError(400,"invalid_report");};
 export function normaliseTag(value) {
@@ -41,7 +43,7 @@ function textField(r, key, min, max) {
 }
 export function validateReport(r, now = new Date()) {
   if (!r || typeof r !== "object" || Array.isArray(r)) bad();
-  const allowed = ["tag","anonymous","category","eventDate","eventTime","timeZone","location","description","repeated","repeatDetails","contactAllowed","truthful","language","website"];
+  const allowed = ["tag","anonymous","category","eventDate","eventTime","timeZone","location","description","repeated","repeatDetails","contactAllowed","truthful","language","website","duration"];
   if (Object.keys(r).some(k => !allowed.includes(k))) bad();
   if (r.truthful !== true || typeof r.anonymous !== "boolean" || typeof r.contactAllowed !== "boolean" || r.website !== "") bad();
   const tag = normaliseTag(r.tag);
@@ -52,7 +54,9 @@ export function validateReport(r, now = new Date()) {
   const today = new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam",year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
   if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0,10) !== r.eventDate || r.eventDate > today) bad();
   if (typeof r.eventTime !== "string" || (r.eventTime !== "" && !/^([01]\d|2[0-3]):[0-5]\d$/.test(r.eventTime))) bad();
-  return {tag,anonymous:r.anonymous,category:r.category,eventDate:r.eventDate,eventTime:r.eventTime,timeZone:r.timeZone,
+  const duration = r.duration === undefined ? "" : r.duration;
+  if (!DURATIONS.includes(duration)) bad();
+  return {tag,anonymous:r.anonymous,category:r.category,eventDate:r.eventDate,eventTime:r.eventTime,timeZone:r.timeZone,duration,
     location:textField(r,"location",2,160),description:textField(r,"description",20,5000),repeated:r.repeated,
     repeatDetails:textField(r,"repeatDetails",0,500),contactAllowed:r.contactAllowed,truthful:true,language:r.language};
 }
