@@ -4,7 +4,7 @@ compatibility_date = "2026-09-07"
 workers_dev = true
 
 [vars]
-ACCEPT_REPORTS = "false"
+ACCEPT_REPORTS = "true"
 ALLOWED_ORIGIN = "https://vve-ogierssingel-bollandstraat.github.io"
 KEY_ID = "v1"
 
