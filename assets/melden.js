@@ -26,10 +26,7 @@ function setLanguage(code) {
 }
 document.querySelectorAll("[data-language]").forEach(el => el.addEventListener("click",() => setLanguage(el.dataset.language)));
 setLanguage(new URLSearchParams(location.search).get("lang") || (navigator.language || "nl").split("-")[0]);
-function showError(key, code) {
-  error.textContent = t(key) + (code ? " [" + code + "]" : "");
-  error.hidden = false;error.focus();
-}
+function showError(key) {error.textContent = t(key);error.hidden = false;error.focus();}
 $("anonymous").addEventListener("change",() => {
   $("tag").disabled = $("anonymous").checked;
   $("tag").required = !$("anonymous").checked;
@@ -59,7 +56,7 @@ if (ready) {
     // Een extensie of privacybrowser kan window.turnstile op een lege stub zetten.
     if (!window.turnstile || typeof window.turnstile.render !== "function") {
       console.error("turnstile-stub", {type: typeof window.turnstile, keys: window.turnstile ? Object.keys(window.turnstile) : null});
-      showError("captchaBlocked", "TS1");return;
+      showError("captchaBlocked");return;
     }
     try {
     widgetId = window.turnstile.render("#turnstile-widget",{
@@ -68,19 +65,19 @@ if (ready) {
       "expired-callback":() => {token = "";submit.disabled = true;},
       "error-callback":() => {token = "";submit.disabled = true;showError("captchaError");}
     });
-    } catch (e) {console.error("turnstile-render", e);showError("captchaBlocked", "TS4");}
+    } catch (e) {console.error("turnstile-render", e);showError("captchaBlocked");}
   };
   const script = document.createElement("script");
   script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=vveTurnstileLoaded&render=explicit";
   script.async = true;
-  script.onerror = () => {console.error("turnstile-network");showError("captchaBlocked", "TS3");};
+  script.onerror = () => {console.error("turnstile-network");showError("captchaBlocked");};
   document.head.appendChild(script);
   setTimeout(() => {
     if (widgetId !== undefined) return;
     // Onderscheid: is het script wel gedraaid maar bleef de widget uit, of kwam er niets?
     const loaded = typeof window.turnstile !== "undefined";
     console.error("turnstile-timeout", {turnstileAanwezig: loaded, render: loaded ? typeof window.turnstile.render : null});
-    showError("captchaBlocked", loaded ? "TS2a" : "TS2b");
+    showError("captchaBlocked");
   },15000);
   $("availability").textContent = t("ready");
 }
