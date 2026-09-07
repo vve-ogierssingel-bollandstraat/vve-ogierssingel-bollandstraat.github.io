@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import re
 import subprocess
+import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +56,10 @@ DOCS_CARD=re.compile(r'<div class="card docs">.*?</div>',re.S)
 
 def visible_text(source):
     parser=Text(); parser.feed(DOCS_CARD.sub("",source)); return " ".join(parser.out)
+
+# Verouderde ?v= stempels betekenen dat terugkerende bezoekers oude JavaScript
+# bij nieuwe HTML krijgen. Dat mag niet stilletjes gebeuren.
+subprocess.run([sys.executable,str(ROOT/"scripts"/"version-assets.py"),"--check"],check=True)
 
 base=subprocess.check_output(["git","show","3e5b6d5b1701b76d76af0343d70236fb05031504:index.html"],cwd=ROOT,text=True)
 before=visible_text(base)
