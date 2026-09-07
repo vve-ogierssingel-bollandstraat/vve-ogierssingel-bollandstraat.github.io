@@ -62,7 +62,7 @@ if (ready) {
       showError("captchaBlocked", "TS1");return;
     }
     try {
-    widgetId = window.turnstile.render("#turnstile",{
+    widgetId = window.turnstile.render("#turnstile-widget",{
       sitekey:config.turnstileSiteKey,action:"melding",language:language === "zh" ? "zh-cn" : language,
       callback:value => {token = value;submit.disabled = busy;},
       "expired-callback":() => {token = "";submit.disabled = true;},
