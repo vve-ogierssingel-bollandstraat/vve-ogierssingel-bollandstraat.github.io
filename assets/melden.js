@@ -26,7 +26,10 @@ function setLanguage(code) {
 }
 document.querySelectorAll("[data-language]").forEach(el => el.addEventListener("click",() => setLanguage(el.dataset.language)));
 setLanguage(new URLSearchParams(location.search).get("lang") || (navigator.language || "nl").split("-")[0]);
-function showError(key) {error.textContent = t(key);error.hidden = false;error.focus();}
+function showError(key, code) {
+  error.textContent = t(key) + (code ? " [" + code + "]" : "");
+  error.hidden = false;error.focus();
+}
 $("anonymous").addEventListener("change",() => {
   $("tag").disabled = $("anonymous").checked;
   $("tag").required = !$("anonymous").checked;
@@ -54,18 +57,31 @@ try {
 if (ready) {
   window.vveTurnstileLoaded = () => {
     // Een extensie of privacybrowser kan window.turnstile op een lege stub zetten.
-    if (!window.turnstile || typeof window.turnstile.render !== "function") {showError("captchaBlocked");return;}
+    if (!window.turnstile || typeof window.turnstile.render !== "function") {
+      console.error("turnstile-stub", {type: typeof window.turnstile, keys: window.turnstile ? Object.keys(window.turnstile) : null});
+      showError("captchaBlocked", "TS1");return;
+    }
+    try {
     widgetId = window.turnstile.render("#turnstile",{
       sitekey:config.turnstileSiteKey,action:"melding",language:language === "zh" ? "zh-cn" : language,
       callback:value => {token = value;submit.disabled = busy;},
       "expired-callback":() => {token = "";submit.disabled = true;},
       "error-callback":() => {token = "";submit.disabled = true;showError("captchaError");}
     });
+    } catch (e) {console.error("turnstile-render", e);showError("captchaBlocked", "TS4");}
   };
   const script = document.createElement("script");
   script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=vveTurnstileLoaded&render=explicit";
-  script.async = true;script.onerror = () => showError("captchaBlocked");document.head.appendChild(script);
-  setTimeout(() => {if (widgetId === undefined) showError("captchaBlocked");},15000);
+  script.async = true;
+  script.onerror = () => {console.error("turnstile-network");showError("captchaBlocked", "TS3");};
+  document.head.appendChild(script);
+  setTimeout(() => {
+    if (widgetId !== undefined) return;
+    // Onderscheid: is het script wel gedraaid maar bleef de widget uit, of kwam er niets?
+    const loaded = typeof window.turnstile !== "undefined";
+    console.error("turnstile-timeout", {turnstileAanwezig: loaded, render: loaded ? typeof window.turnstile.render : null});
+    showError("captchaBlocked", loaded ? "TS2a" : "TS2b");
+  },15000);
   $("availability").textContent = t("ready");
 }
 form.addEventListener("submit",async event => {
