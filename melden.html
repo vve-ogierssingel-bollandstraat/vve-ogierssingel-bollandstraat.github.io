@@ -10,15 +10,17 @@
 <title>Vertrouwelijk melden – VvE Ogierssingel / Bollandstraat</title>
 
 <script src="assets/melding-config.js" defer></script>
+<script src="assets/melden-i18n.js" defer></script>
 <script src="assets/melden.js" defer></script>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/theme.js"></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
 <main class="wrap">
-<nav aria-label="Navigatie"><a href="index.html" data-i18n="navRules">Gebouwregels</a><a href="eigenaren.html" data-i18n="navUpdates">Updates voor eigenaren</a><a href="melden.html" aria-current="page" data-i18n="navReport">Melding doen</a></nav>
-<div class="lang-nav" aria-label="Language"><button type="button" data-language="nl" aria-pressed="true">Nederlands</button><button type="button" data-language="en" aria-pressed="false">English</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div>
+<div class="lang-nav" aria-label="Language"><button type="button" lang="nl" data-language="nl" aria-pressed="true">Nederlands</button><button type="button" lang="en" data-language="en" aria-pressed="false">English</button><button type="button" lang="de" data-language="de" aria-pressed="false">Deutsch</button><button type="button" lang="pl" data-language="pl" aria-pressed="false">Polski</button><button type="button" lang="ro" data-language="ro" aria-pressed="false">Română</button><button type="button" lang="bg" data-language="bg" aria-pressed="false">Български</button><button type="button" lang="cs" data-language="cs" aria-pressed="false">Čeština</button><button type="button" lang="sk" data-language="sk" aria-pressed="false">Slovenčina</button><button type="button" lang="hu" data-language="hu" aria-pressed="false">Magyar</button><button type="button" lang="hr" data-language="hr" aria-pressed="false">Hrvatski</button><button type="button" lang="sr" data-language="sr" aria-pressed="false">Srpski</button><button type="button" lang="uk" data-language="uk" aria-pressed="false">Українська</button><button type="button" lang="ru" data-language="ru" aria-pressed="false">Русский</button><button type="button" lang="zh" data-language="zh" aria-pressed="false">中文</button></div>
+<nav class="page-nav" id="pageNav" data-page="report" aria-label="Pagina"></nav>
 <section class="card">
 <h1 data-i18n="title">Vertrouwelijk melden bij de VvE</h1>
 <p data-i18n="intro">U hoeft uw naam of adres niet in te vullen. Gebruik het nummer van een aan uw appartement uitgegeven toegangstag. Alleen bevoegde bestuursleden en de VvE-manager mogen dit nummer via de tagadministratie aan een appartement koppelen. Uw identiteit wordt niet zonder noodzaak aan andere bewoners bekendgemaakt.</p>

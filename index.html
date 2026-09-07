@@ -6,19 +6,16 @@
 <title>Gebouwregels - Building Rules</title>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/theme.js"></script>
+<script src="assets/nav.js" defer></script>
 </head>
 <body>
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
 <div class="wrap">
 
 <div class="card">
-<div class="icons">🚭 🚫💊 🚫🍺 🤫📱 🤫💬</div>
 <div class="lang-nav" id="langNav"></div>
-</div>
-
-<div class="card docs">
-<a href="melden.html?lang=nl" id="linkReport">📮 <span>Klacht of melding doen</span></a>
-<a href="eigenaren.html?lang=nl" id="linkOwners">📋 <span>Informatie voor eigenaren</span></a>
+<nav class="page-nav" id="pageNav" data-page="rules" aria-label="Pagina"></nav>
+<div class="icons">🚭 🚫💊 🚫🍺 🤫📱 🤫💬</div>
 </div>
 
 <!-- NEDERLANDS -->
@@ -1182,29 +1179,17 @@ const langs = [
   {code:'zh',label:'中文'}
 ];
 
-const links = {
-  nl:['Klacht of melding doen','Informatie voor eigenaren'],
-  en:['Report an issue','Owner information'],
-  de:['Problem melden','Informationen für Eigentümer'],
-  pl:['Zgłoś problem','Informacje dla właścicieli'],
-  ro:['Raportează o problemă','Informații pentru proprietari'],
-  bg:['Подайте сигнал','Информация за собствениците'],
-  cs:['Nahlásit problém','Informace pro vlastníky'],
-  sk:['Nahlásiť problém','Informácie pre vlastníkov'],
-  hu:['Probléma bejelentése','Tulajdonosi tájékoztató'],
-  hr:['Prijavite problem','Informacije za vlasnike'],
-  sr:['Prijavite problem','Informacije za vlasnike'],
-  uk:['Повідомити про проблему','Інформація для власників'],
-  ru:['Сообщить о проблеме','Информация для собственников'],
-  zh:['提交报告','业主信息']
-};
-
 const nav = document.getElementById('langNav');
 langs.forEach(l => {
   const btn = document.createElement('button');
   btn.textContent = l.label;
   btn.dataset.lang = l.code;
-  btn.onclick = () => show(l.code);
+  btn.onclick = () => {
+    show(l.code);
+    var url = new URL(location.href);
+    url.searchParams.set('lang', l.code);
+    history.replaceState(null, '', url);
+  };
   nav.appendChild(btn);
 });
 
@@ -1221,18 +1206,15 @@ function show(code) {
   if (ct) ct.classList.add('active');
   if (btn) btn.classList.add('active');
 
-  var pair = links[code] || links.nl;
-  var formLang = ['nl','en','zh'].indexOf(code) === -1 ? 'en' : code;
-  var report = document.getElementById('linkReport');
-  var owners = document.getElementById('linkOwners');
-  report.href = 'melden.html?lang=' + formLang;
-  report.querySelector('span').textContent = pair[0];
-  owners.href = 'eigenaren.html?lang=' + code;
-  owners.querySelector('span').textContent = pair[1];
+  document.documentElement.lang = code;
+  if (window.vveRenderNav) vveRenderNav(code);
 }
 
-var browserLang = (navigator.language || 'nl').split('-')[0].toLowerCase();
-show(browserLang);
+// Een taal in de URL wint van de browsertaal, zodat doorklikken vanaf een
+// andere pagina de gekozen taal meeneemt.
+var urlLang = new URLSearchParams(location.search).get('lang');
+var startLang = (urlLang || navigator.language || 'nl').split('-')[0].toLowerCase();
+show(startLang);
 
 </script>
 </body>

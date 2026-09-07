@@ -48,7 +48,7 @@ export function validateReport(r, now = new Date()) {
   if (r.truthful !== true || typeof r.anonymous !== "boolean" || typeof r.contactAllowed !== "boolean" || r.website !== "") bad();
   const tag = normaliseTag(r.tag);
   if ((r.anonymous && (tag || r.contactAllowed)) || (!r.anonymous && !tag)) bad();
-  if (!["geluid","rook-geur","vervuiling","veiligheid","schade","technisch","anders"].includes(r.category) || !["ja","nee","onbekend"].includes(r.repeated) || !["nl","en","zh"].includes(r.language) || r.timeZone !== "Europe/Amsterdam") bad();
+  if (!["geluid","rook-geur","vervuiling","veiligheid","schade","technisch","anders"].includes(r.category) || !["ja","nee","onbekend"].includes(r.repeated) || !["nl","en","de","pl","ro","bg","cs","sk","hu","hr","sr","uk","ru","zh"].includes(r.language) || r.timeZone !== "Europe/Amsterdam") bad();
   if (typeof r.eventDate !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(r.eventDate)) bad();
   const date = new Date(r.eventDate + "T12:00:00Z");
   const today = new Intl.DateTimeFormat("sv-SE",{timeZone:"Europe/Amsterdam",year:"numeric",month:"2-digit",day:"2-digit"}).format(now);
