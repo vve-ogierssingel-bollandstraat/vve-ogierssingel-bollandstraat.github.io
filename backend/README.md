@@ -132,6 +132,36 @@ gegevens van de feitelijke melder. Verplaats alleen noodzakelijke gegevens naar
 een apart dossier als langere behandeling nodig is en bepaal daar een termijn.
 Verwijder kopieën en bijlagen ook op beheerdersapparaten volgens die afspraak.
 
+## Bewaren en opruimen
+
+De Worker wist zijn eigen opslag: een uurlijkse cron verwijdert meldingen na
+180 dagen en niet-herleidbare signalen na 30 dagen. Een R2-lifecycleregel van
+180 dagen op de prefix `reports/` staat daarnaast als vangnet, voor het geval
+de cron stilvalt.
+
+Wat `decrypt.mjs` op een beheerdersapparaat zet valt daar buiten. Dat is platte
+tekst en blijft staan tot iemand het weghaalt; geen enkele automatische regel
+raakt die bestanden. De privacytekst op `melden.html` belooft dat het bestuur
+langer lopende dossiers hoogstens twee jaar na afronding bewaart, deze jaarlijks
+opschoont, en dat werkkopieën onder dezelfde termijn vallen. `opruimen.mjs`
+maakt dat uitvoerbaar:
+
+```sh
+node opruimen.mjs /prive/behandeling                     # overzicht, wist niets
+node opruimen.mjs /prive/behandeling --verwijder         # ouder dan 730 dagen
+node opruimen.mjs /prive/behandeling --verwijder --alles # zaak afgerond
+```
+
+Zonder `--verwijder` toont het script alleen wat er staat en hoe oud het is.
+Het raakt uitsluitend bestanden die `decrypt.mjs` zelf aanmaakt; eigen
+aantekeningen in dezelfde map blijven ongemoeid. Vóór het verwijderen volgt één
+overschrijfronde. Op SSD's en copy-on-write-bestandssystemen is dat geen
+garantie op onherstelbaar wissen: houd de behandelmap op een versleutelde schijf.
+
+Een bewaartermijn die wel in de privacytekst staat maar door niemand wordt
+toegepast, is onder de AVG een tekortkoming en geen detail. Zet de jaarlijkse
+opschoning daarom op de bestuursagenda.
+
 ## Controle van het voorstel
 
 ```sh
