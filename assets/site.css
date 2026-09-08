@@ -107,6 +107,8 @@ dialog{max-width:min(600px,92vw);border:1px solid var(--border);border-radius:12
 dialog::backdrop{background:rgba(0,0,0,.7)}
 dialog img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:14px 0}
 dialog h2{margin-top:0}
+.dialog-actions{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:20px}
+.dialog-actions .button{width:100%;text-align:center}
 
 @media(max-width:540px){
 .grid{grid-template-columns:1fr}

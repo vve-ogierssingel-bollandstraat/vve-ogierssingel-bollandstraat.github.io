@@ -27,6 +27,20 @@ function setLanguage(code) {
 document.querySelectorAll("[data-language]").forEach(el => el.addEventListener("click",() => setLanguage(el.dataset.language)));
 setLanguage(new URLSearchParams(location.search).get("lang") || (navigator.language || "nl").split("-")[0]);
 function showError(key) {error.textContent = t(key);error.hidden = false;error.focus();}
+// Het vinkje heeft gevolgen die de bewoner niet kan overzien: geen opvolging,
+// geen contact, kortere bewaartermijn. Daarom een bevestiging vooraf.
+const anonDialog = $("anon-dialog");
+function undoAnonymous() {
+  $("anonymous").checked = false;
+  $("anonymous").dispatchEvent(new Event("change",{bubbles:true}));
+  $("tag").focus();
+}
+$("anonymous").addEventListener("change",() => {if ($("anonymous").checked) anonDialog.showModal();});
+$("anon-back").addEventListener("click",() => {anonDialog.close();undoAnonymous();});
+$("anon-proceed").addEventListener("click",() => anonDialog.close());
+// Escape telt als terugkeren: dat is de veilige uitkomst, niet de anonieme.
+anonDialog.addEventListener("cancel",event => {event.preventDefault();anonDialog.close();undoAnonymous();});
+
 $("anonymous").addEventListener("change",() => {
   $("tag").disabled = $("anonymous").checked;
   $("tag").required = !$("anonymous").checked;

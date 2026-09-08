@@ -10,9 +10,9 @@
 <title>Vertrouwelijk melden – VvE Ogierssingel / Bollandstraat</title>
 
 <script src="assets/melding-config.js?v=3bc4f7e8" defer></script>
-<script src="assets/melden-i18n.js?v=b1604d32" defer></script>
-<script src="assets/melden.js?v=f7c1e0f3" defer></script>
-<link rel="stylesheet" href="assets/site.css?v=ad91fbaa">
+<script src="assets/melden-i18n.js?v=cb45c87a" defer></script>
+<script src="assets/melden.js?v=c61d2ba1" defer></script>
+<link rel="stylesheet" href="assets/site.css?v=fbd1ef09">
 <script src="assets/theme.js?v=5e173022"></script>
 <script src="assets/nav.js?v=115d4f9f" defer></script>
 </head>
@@ -59,6 +59,7 @@
 <button id="submit" type="submit" disabled data-i18n="submit">Melding verzenden</button>
 <p class="help" data-i18n="receiptHelp">Na ontvangst krijgt u een willekeurig meldingsnummer. Bewaar dat nummer voor verdere communicatie. U krijgt geen automatische e-mail.</p>
 </form>
+<dialog id="anon-dialog" aria-labelledby="anon-title"><h2 id="anon-title" data-i18n="anonWarnTitle">Een anonieme melding is bijna geen melding</h2><p data-i18n="anonWarnBody">Zonder tagnummer kan het bestuur uw melding nergens op baseren: geen waarschuwing, geen sanctie, geen onderzoek naar een bepaalde woning. Wij kunnen u ook niets vragen en niets laten weten. Het signaal wordt vastgelegd, maar er verandert meestal niets.</p><p data-i18n="anonWarnPrivacy">Uw tagnummer wordt apart versleuteld bewaard en nooit aan andere bewoners getoond. Alleen bevoegde bestuursleden kunnen het via de administratie aan een woning koppelen.</p><div class="dialog-actions"><button type="button" class="button" id="anon-back" data-i18n="anonWarnBack">Terug, ik vul mijn tagnummer in</button><button type="button" class="linklike" id="anon-proceed" data-i18n="anonWarnProceed">Toch anoniem doorgeven</button></div></dialog>
 <dialog id="tag-help-dialog" aria-labelledby="tag-help-title"><h2 id="tag-help-title" data-i18n="tagWhereTitle">Het nummer op uw tag</h2><img src="assets/tagnummer-vinden.png" width="1100" height="404" data-i18n-alt="tagWhereAlt" alt="Twee tags met een pijl naar de code op de metalen beugel, en een invoerveld waarin dat nummer wordt ingevuld."><p data-i18n="tagWhereBody">Op de metalen beugel van uw tag staat een code. Neem dat nummer precies over, inclusief eventuele voorloopnullen. Staat er geen code op uw tag, kies dan voor een anoniem signaal.</p><button type="button" id="tag-help-close" data-i18n="close">Sluiten</button></dialog>
 <section id="success" tabindex="-1" role="status" hidden><h2 data-i18n="success">Uw melding is ontvangen</h2><p data-i18n="saveNumber">Bewaar dit meldingsnummer. Gebruik voortaan dit nummer in correspondentie, niet uw tagnummer.</p><code id="report-id" class="receipt"></code><p data-i18n="receivedHelp">Het bestuur beoordeelt uw melding en controleert de tag intern. Uw tagnummer en woning worden hier niet getoond.</p><a href="melden.html" data-i18n="newReport">Een nieuwe melding doen</a></section>
 </section>
