@@ -100,7 +100,8 @@ textarea{resize:vertical;min-height:140px}
 .receipt{font-size:1.25em;word-break:break-all;display:block;padding:16px;border:1px solid var(--border);border-radius:8px;margin:16px 0}
 .linklike{background:none;border:0;color:var(--link);text-decoration:underline;text-underline-offset:3px;padding:4px 0;min-height:0;font-weight:normal;font-size:.9em;cursor:pointer;display:inline-block}
 @supports selector(::-webkit-calendar-picker-indicator){
-input[type=date]::-webkit-calendar-picker-indicator,input[type=time]::-webkit-calendar-picker-indicator{width:24px;height:24px;padding:6px;margin:0;cursor:pointer}}
+input[type=date],input[type=time]{position:relative;padding-left:50px}
+input[type=date]::-webkit-calendar-picker-indicator,input[type=time]::-webkit-calendar-picker-indicator{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:32px;height:32px;padding:6px;margin:0;cursor:pointer}}
 
 /* Hulpdialoog bij het tagnummer */
 dialog{max-width:min(600px,92vw);border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);padding:24px}
